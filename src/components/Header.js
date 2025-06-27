@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container mx-auto px-6 py-3 flex justify-between items-center">
                 <div>
                     <p className="text-sm font-semibold">Recursos didácticos abiertos</p>
-                    <p className="text-xs">Campus Virtual UPIIG IPN</p>
+                    <p className="text-xs">Campus Virtual UPIIZ IPN</p>
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="flex items-center space-x-2 text-lg">

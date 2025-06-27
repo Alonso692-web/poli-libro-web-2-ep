@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Polilibro Electricidad y Magnetismo",
+  title: "Polilibro Web Client and Backend Development Frameworks",
   description: "Recursos didácticos del IPN",
 };
 

@@ -3,34 +3,40 @@
 
 import { useState, useEffect } from 'react';
 
+let hasIncremented = false;
+
 const Sidebar = () => {
     const [visits, setVisits] = useState(0);
 
     useEffect(() => {
-        // Obtenemos el contador actual del localStorage.
-        let currentCount = localStorage.getItem('polilibroVisitCounter');
+        if (!hasIncremented) {
+            // Leer el contador actual del localStorage
+            let currentCount = localStorage.getItem('polilibroVisitCounter');
 
-        if (currentCount === null) {
-            // SI NO HAY NADA GUARDADO (es la primera visita):
-            // ¡AQUÍ ESTÁ EL CAMBIO! Iniciamos en 0.
-            currentCount = 0;
+            if (currentCount === null) {
+                currentCount = 0;
+            } else {
+                currentCount = parseInt(currentCount, 10);
+            }
+
+            // Incrementar y guardar en localStorage
+            const newCount = currentCount + 1;
+            localStorage.setItem('polilibroVisitCounter', newCount.toString());
+
+            // Actualizar el estado con el nuevo valor
+            setVisits(newCount);
+
+            // Marcar que ya se ha incrementado en esta sesión
+            hasIncremented = true;
         } else {
-            // Si ya ha visitado, lo convertimos a número.
-            currentCount = parseInt(currentCount, 10);
+            // Si ya se ha incrementado, leer el valor actual y actualizar el estado
+            const currentCount = localStorage.getItem('polilibroVisitCounter');
+            const count = currentCount ? parseInt(currentCount, 10) : 0;
+            setVisits(count);
         }
-
-        // Incrementamos el contador para la visita ACTUAL.
-        const newCount = currentCount + 1;
-
-        // Guardamos el nuevo valor para la próxima visita.
-        localStorage.setItem('polilibroVisitCounter', newCount.toString());
-
-        // Actualizamos el estado para mostrar el nuevo número en pantalla.
-        setVisits(newCount);
-
     }, []);
 
-    // Formatear el número para que siempre tenga 6 dígitos.
+    // Formatear el número para mostrar siempre 6 dígitos
     const formattedVisits = String(visits).padStart(6, '0').split('');
 
     return (
@@ -44,11 +50,10 @@ const Sidebar = () => {
                                 <span key={index} className="px-1">{digit}</span>
                             ))
                         ) : (
-                            // Este es un estado inicial antes de que useEffect se ejecute
                             <span className="px-1">000000</span>
                         )}
                     </div>
-                    <p className="text-xs text-gray-500 mt-2">Iniciado en 27 de agosto de 2024</p>
+                    <p className="text-xs text-gray-500 mt-2">Iniciado en 11 de junio de 2025</p>
                 </div>
             </div>
         </aside>
