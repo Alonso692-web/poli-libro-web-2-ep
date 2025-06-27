@@ -1,4 +1,3 @@
-// src/components/Header.js
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Header = () => {

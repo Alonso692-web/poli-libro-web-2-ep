@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -10,7 +9,7 @@ const Sidebar = () => {
 
     useEffect(() => {
         if (!hasIncremented) {
-            // Leer el contador actual del localStorage
+
             let currentCount = localStorage.getItem('polilibroVisitCounter');
 
             if (currentCount === null) {
@@ -36,7 +35,7 @@ const Sidebar = () => {
         }
     }, []);
 
-    // Formatear el número para mostrar siempre 6 dígitos
+
     const formattedVisits = String(visits).padStart(6, '0').split('');
 
     return (

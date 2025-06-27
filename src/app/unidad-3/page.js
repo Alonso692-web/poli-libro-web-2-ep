@@ -5,14 +5,15 @@ import Image from 'next/image';
 import { courseData } from '@/courseData';
 import { FaCodeBranch, FaChevronRight } from 'react-icons/fa';
 
-export default function Unidad1Page() {
-    const unit = courseData.units.find(u => u.slug === 'unidad-1');
+export default function Unidad3Page() {
+
+    const unit = courseData.units.find(u => u.slug === 'unidad-3');
     if (!unit) return <div>Unidad no encontrada</div>;
 
     const breadcrumbItems = [
         { name: 'Cursos', href: '/' },
         { name: courseData.title, href: '/' },
-        { name: `Unidad I: ${unit.subtitle}`, href: `/${unit.slug}` }
+        { name: `Unidad III: ${unit.subtitle}`, href: `/${unit.slug}` }
     ];
 
     return (
@@ -26,11 +27,8 @@ export default function Unidad1Page() {
                         <h1 className="text-white text-4xl font-extrabold text-center">{unit.title}<br />{unit.subtitle}</h1>
                     </div>
                 </div>
-
                 <div className="bg-white p-8 rounded-md shadow-sm">
                     <h2 className="text-2xl font-bold mb-6 text-purple-800">Contenido Temático</h2>
-
-                    { }
                     <ul className="space-y-4">
                         {unit.content.map((topic, index) => (
                             <li key={index} className="border-b border-gray-200 pb-3">
@@ -38,8 +36,6 @@ export default function Unidad1Page() {
                                     <FaCodeBranch className="text-blue-500 text-lg flex-shrink-0" />
                                     <span className="font-semibold text-gray-800">{topic.title}</span>
                                 </div>
-
-                                { }
                                 {topic.subtopics && topic.subtopics.length > 0 && (
                                     <ul className="mt-2 ml-6 space-y-1">
                                         {topic.subtopics.map((subtopic, subIndex) => (
@@ -56,12 +52,10 @@ export default function Unidad1Page() {
                 </div>
 
                 <nav className="flex justify-between items-center mt-8">
-                    <Link href="/info-general" className="text-blue-600 hover:underline">‹ SECCIÓN ANTERIOR<br />Información General</Link>
-                    { }
-                    <Link href="/unidad-2" className="text-blue-600 hover:underline text-right">SECCIÓN SIGUIENTE ›<br />Unidad II</Link>
+                    <Link href="/unidad-2" className="text-blue-600 hover:underline">‹ SECCIÓN ANTERIOR<br />Unidad II</Link>
+                    <Link href="/unidad-4" className="text-blue-600 hover:underline text-right">SECCIÓN SIGUIENTE ›<br />Unidad IV</Link>
                 </nav>
             </div>
         </div>
-
     );
 }

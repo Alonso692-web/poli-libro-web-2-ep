@@ -1,4 +1,3 @@
-// src/components/InfoTabs.js
 "use client";
 
 import { useState } from 'react';
@@ -17,13 +16,13 @@ const InfoTabs = ({ tabs }) => {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`py-2 px-4 text-2xl transition-colors duration-200 ${isActive
-                                    ? 'text-pink-600 border-b-2 border-pink-600'
-                                    : 'text-gray-500 hover:text-gray-800'
+                                ? 'text-pink-600 border-b-2 border-pink-600'
+                                : 'text-gray-500 hover:text-gray-800'
                                 }`}
                             title={tab.title}
                         >
-                            {/* ---- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---- */}
-                            {/* Renderizamos el icono directamente, porque ya es JSX */}
+                            { }
+                            { }
                             {tab.icon}
                         </button>
                     );

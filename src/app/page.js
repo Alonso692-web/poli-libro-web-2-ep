@@ -1,4 +1,3 @@
-// src/app/page.js
 import Link from 'next/link';
 import Image from 'next/image';
 import Sidebar from '@/components/Sidebar';
@@ -6,7 +5,6 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { courseData } from '@/courseData';
 
 export default function HomePage() {
-  // Creamos una lista unificada de todas las secciones que queremos mostrar
   const courseSections = [
     courseData.generalInfo,
     ...courseData.units
@@ -24,7 +22,7 @@ export default function HomePage() {
       <div className="w-full">
         <Breadcrumb items={breadcrumbItems} />
 
-        {/* Banner principal del libro (como en la imagen) */}
+        { }
         <div className="relative mb-12">
           <Image
             src="/banners/main-banner.jpg"
@@ -41,16 +39,16 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Contenedor para la lista de secciones del curso */}
+        { }
         <div className="space-y-10">
           {courseSections.map((section) => (
             <div key={section.slug}>
-              {/* Título de la sección (ej. "Información General", "Unidad I") */}
+              { }
               <h2 className="text-lg font-semibold text-gray-600 mb-1">{section.title}</h2>
-              {/* Subtítulo (ej. "Antes de comenzar", "Introducción al Desarrollo Web") */}
+              { }
               <h3 className="text-2xl text-purple-800 mb-3">{section.subtitle}</h3>
 
-              {/* El banner de la sección es un enlace a la página de detalles */}
+              { }
               <Link href={section.slug}>
                 <div className="block group">
                   <Image
@@ -62,7 +60,7 @@ export default function HomePage() {
                   />
                 </div>
               </Link>
-              {/* Texto pequeño debajo del banner */}
+              { }
               <p className="text-right text-xs text-gray-500 mt-1 px-2">{section.subtext}</p>
             </div>
           ))}

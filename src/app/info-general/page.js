@@ -1,9 +1,8 @@
-// src/app/info-general/page.js
 import Sidebar from '@/components/Sidebar';
 import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { courseData } from '@/courseData';
-import InfoTabs from '@/components/InfoTabs'; // ¡Importamos nuestro nuevo componente!
+import InfoTabs from '@/components/InfoTabs';
 
 export default function InfoGeneralPage() {
     const info = courseData.generalInfo;
@@ -22,11 +21,11 @@ export default function InfoGeneralPage() {
 
                 <div className="bg-white p-6 shadow-sm rounded-md">
                     <h2 className="text-2xl font-semibold text-gray-700 mb-4 ml-4">Antes de comenzar</h2>
-                    {/* Usamos el componente de pestañas y le pasamos los datos */}
+                    { }
                     <InfoTabs tabs={info.tabs} />
                 </div>
 
-                {/* Navegación entre secciones */}
+                { }
                 <nav className="flex justify-between items-center mt-8">
                     <Link href="/" className="text-blue-600 hover:underline">‹ SECCIÓN ANTERIOR</Link>
                     <Link href="/unidad-1" className="text-blue-600 hover:underline text-right">SECCIÓN SIGUIENTE ›<br />Unidad I</Link>

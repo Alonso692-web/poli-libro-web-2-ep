@@ -1,4 +1,3 @@
-// src/components/Breadcrumb.js
 const Breadcrumb = ({ items }) => {
     return (
         <nav className="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
