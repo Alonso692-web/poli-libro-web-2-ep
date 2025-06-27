@@ -1,11 +1,29 @@
 // src/courseData.js
 // Las importaciones de iconos y de Image permanecen igual
-import { FaBookmark, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle } from 'react-icons/fa';
+import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle } from 'react-icons/fa';
 import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
 
-// BienvenidaContent no cambia
+const FeatureIcon = ({ icon }) => (
+    <div className="flex justify-center mb-6">
+        <div className="relative w-32 h-32 flex items-center justify-center">
+            {/* El cuadrado rotado que sirve de fondo */}
+            <div className="absolute w-full h-full bg-purple-100 rounded-lg transform rotate-45"></div>
+            {/* El icono que pasamos como prop, renderizado encima */}
+            <div className="relative text-5xl text-purple-600">{icon}</div>
+        </div>
+    </div>
+);
+
+const bibliographyData = [
+    { author: 'Holmes, S.', year: '2019', title: 'Getting MEAN with Mongo, Express, Angular, and Node', publisher: 'Manning/ 978-1617294754' },
+    { author: 'Ottinger, J. y Linwood, J.', year: '2022', title: 'Beginning Hibernate 6: Java Persistence from Beginner to Pro', publisher: 'Apress/ 978-1-4842-7336-4' },
+    { author: 'Shmeling, B. y Dargatz, M.', year: '2022', title: 'Kubernetes Native Development', publisher: 'Apress/ 978-1-4842-7941-0' },
+    { author: 'Varanasi, B. y Bartkov, M.', year: '2022', title: 'Spring REST: Building Java Microservices and Cloud Applications', publisher: 'Apress/ 978-1-4842-7476-7' },
+    { author: 'Zammeti, F.', year: '2020', title: 'Modern Full-Stack Development: Using TypeScript, React, Node.js, Webpack, and Docker', publisher: 'Apress/ 978-1484257371' },
+];
+
 const BienvenidaContent = () => (
     <div className="flex flex-col md:flex-row gap-8 items-center">
         <div className="text-gray-700 space-y-4 flex-1 prose max-w-none">
@@ -42,55 +60,144 @@ export const courseData = {
                 id: 'tecnologia',
                 icon: <FaCog />,
                 title: "Complementos tecnológicos",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (
+                    <div className="prose max-w-none">
+                        <h4 className="text-xl font-bold text-purple-700">Herramientas para la Plataforma Educativa</h4>
+                        <p>Para comenzar, identifica las necesidades y/o requerimientos tecnológicos que puedas presentar. Para tener una experiencia de aprendizaje exitosa, es fundamental familiarizarse con las herramientas que utilizaremos.</p>
+                        <ul>
+                            <li><strong>Visual Studio Code:</strong> Un editor de código moderno y extensible.</li>
+                            <li><strong>Node.js:</strong> El entorno de ejecución para JavaScript en el servidor.</li>
+                            <li><strong>Git y una cuenta de GitHub:</strong> Para el control de versiones de nuestros proyectos.</li>
+                        </ul>
+                    </div >
+                )
             },
             {
                 id: 'concepto',
                 icon: <FaLightbulb />,
                 title: "Concepto Clave",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (
+                    <div className="prose max-w-none">
+                        <h4 className="text-xl font-bold text-purple-700">El concepto de Desarrollo Web en Cliente y Servidor</h4>
+                        <p>El desarrollo web moderno se basa en la interacción entre el <strong>cliente</strong> (tu navegador, que solicita información) y el <strong>servidor</strong> (una computadora remota que procesa la solicitud y devuelve una respuesta).</p>
+                        <p>Frameworks como <strong>React</strong> se ejecutan en el cliente para crear interfaces de usuario dinámicas y ricas en interactividad, mientras que frameworks como <strong>Express.js</strong> o <strong>Django</strong> se ejecutan en el servidor para gestionar la lógica de negocio, el acceso a bases de datos y la seguridad.</p>
+                    </div>
+                )
             },
             {
                 id: 'objetivo',
                 icon: <FaBullseye />,
                 title: "Objetivo General",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (
+                    <div className="prose max-w-none">
+                        <h4 className="text-xl font-bold text-purple-700">Objetivo General del Polilibro</h4>
+                        <p>Aplicar los conceptos y modelos de los frameworks de desarrollo web más populares para crear aplicaciones robustas, escalables y seguras, diferenciando claramente las responsabilidades del lado del cliente y del lado del servidor.</p>
+                        <p>El apoyo didáctico de la unidad de aprendizaje de "Web Client and Backend Development Frameworks" tiene la finalidad complementar y reforzar el curso en su modalidad presencial.</p>
+                    </div>
+                )
+            },
+            {
+                id: 'contenido',
+                icon: <VscSymbolStructure />,
+                title: "Contenido Temático",
+                content: (
+                    <div>
+                        <h4 className="text-xl font-bold text-purple-700 mb-4 text-center">Contenido Temático del Polilibro</h4>
+                        <iframe
+                            src="/documents/VII sem Web Client And Backend Development Frameworks_.pdf" // La ruta pública a tu PDF
+                            className="w-full h-[80vh] rounded-md border shadow-lg"
+                            title="Contenido Temático del Polilibro PDF"
+                        >
+                            Tu navegador no soporta la visualización de PDFs. Puedes <a href="/documents/polilibro.pdf">descargarlo aquí</a>.
+                        </iframe>
+                    </div>
+                )
             },
             {
                 id: 'organizacion',
-                icon: <VscSymbolStructure />,
-                title: "contenido",
-                content: (<div className="prose max-w-none">...</div>)
-            },
-            {
-                id: 'estructura',
                 icon: <FaListAlt />,
                 title: "Organización del Polilibro",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (
+                    <div className="text-center">
+                        {/* Título principal de la sección */}
+                        <h4 className="text-2xl font-bold text-purple-700 mb-4">¿Cómo está organizado el Polilibro?</h4>
+
+                        {/* Usamos nuestro nuevo componente de icono */}
+                        <FeatureIcon icon={<FaListAlt />} />
+
+                        {/* La caja de contenido con el fondo gris claro */}
+                        <div className="bg-slate-100 border border-slate-200 rounded-lg p-6 text-left shadow-inner">
+                            {/* Primer párrafo con un icono de información */}
+                            <div className="flex items-start gap-4 mb-4">
+                                <span className="text-xl text-blue-500 mt-1 flex-shrink-0"><FaInfoCircle /></span>
+                                <p className="text-gray-800">
+                                    <strong>El Polilibro está diseñado por unidades.</strong> Cada una corresponde con los temas del programa autorizado de la unidad de aprendizaje. Para su estudio se cubren los temas de Introducción al Desarrollo Web, Frameworks de Cliente, Desarrollo en Servidor, Seguridad y Despliegue en la Nube.
+                                </p>
+                            </div>
+
+                            {/* Párrafo indentado y en cursiva (como una cita) */}
+                            <div className="pl-6 ml-4 border-l-4 border-slate-300">
+                                <p className="text-gray-600 italic">
+                                    En cada unidad temática se proponen actividades de acuerdo al grado de comprensión que se requiere. Las actividades son: lecturas sugeridas, presentaciones, videos, ejercicios prácticos y proyectos que simulan escenarios del mundo real.
+                                </p>
+                            </div>
+
+                            {/* Navegación estática de página */}
+                            <div className="flex justify-between items-center mt-6 border-t border-slate-200 pt-4 text-gray-500 font-semibold">
+                                <button className="text-2xl hover:text-black transition-colors" title="Anterior">←</button>
+                                <span>Pág. 1/2</span>
+                                <button className="text-2xl hover:text-black transition-colors" title="Siguiente">→</button>
+                            </div>
+                        </div>
+                    </div>
+                )
             },
             {
                 id: 'evaluacion',
                 icon: <FaCheckCircle />,
                 title: "Tabla de Evaluación",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (<div className="prose max-w-none">Tabla de evaluación</div>)
             },
             {
                 id: 'actividades',
                 icon: <FaTable />,
                 title: "Rúbrica de Actividades",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (<div className="prose max-w-none">Rúbrica de actividades</div>)
             },
             {
                 id: 'bibliografia',
                 icon: <FaBook />,
                 title: "Bibliografía recomendada",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (
+                    <div className="text-left">
+                        <h4 className="text-2xl font-bold text-purple-700 mb-4 text-center">Bibliografía recomendada para el estudio del Polilibro</h4>
+
+                        <FeatureIcon icon={<FaBookOpen />} />
+
+                        <ul className="space-y-5">
+                            {bibliographyData.map((item, index) => (
+                                <li key={index} className="border-b-2 border-dotted border-gray-200 pb-5">
+                                    <div className="flex items-start gap-4">
+                                        <span className="text-purple-500 text-lg mt-1"><FaCertificate /></span>
+                                        <div>
+                                            <p className="text-gray-800">
+                                                <span className="font-semibold">{item.author} ({item.year}).</span>
+                                                <em className="ml-1">{item.title}.</em>
+                                            </p>
+                                            <p className="text-gray-600">Editorial / ISBN: {item.publisher}.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )
             },
             {
                 id: 'acerca',
                 icon: <MdPending />,
                 title: "Acerca del polilibro",
-                content: (<div className="prose max-w-none">...</div>)
+                content: (<div className="prose max-w-none">Acerda del autor</div>)
             },
 
         ]
@@ -98,42 +205,50 @@ export const courseData = {
     units: [
         {
             id: 1,
-            slug: "unidad-1", // SIN BARRA
+            slug: "unidad-1",
             title: "Unidad I",
-            subtitle: "Introducción al Desarrollo Web",
+            // Subtítulo oficial del PDF
+            subtitle: "Arquitecturas de desarrollo web",
             banner: "/banners/intro.jpg",
-            subtext: "Arquitectura, protocolos y diferencias entre frontend y backend.",
+            subtext: "Fundamentos, arquitecturas y principios del desarrollo web moderno.",
+            // --- CONTENIDO OFICIAL DE LA UNIDAD 1 ---
+            // Estructura jerárquica para los temas
             content: [
-                "Arquitectura cliente-servidor",
-                "Protocolos HTTP y WebSockets",
-                "Diferencias entre desarrollo frontend y backend",
-            ]
-        },
-        {
-            id: 2,
-            slug: "unidad-2",
-            title: "Unidad II",
-            subtitle: "Frameworks de Desarrollo en Cliente",
-            banner: "/banners/frontend.jpg",
-            subtext: "Arquitectura, protocolos y diferencias entre frontend y backend.",
-            content: [
-                "Arquitectura cliente-servidor",
-                "Protocolos HTTP y WebSockets",
-                "Diferencias entre desarrollo frontend y backend",
-            ]
-        },
-        {
-            id: 3,
-            slug: "unidad-3",
-            title: "Unidad III",
-            subtitle: "Desarrollo en el Servidor",
-            banner: "/banners/frontend.jpg",
-            subtext: "Arquitectura, protocolos y diferencias entre frontend y backend.",
-            content: [
-                "Introducción a Node.js, Django, Laravel y Spring Boot",
-                "Creación de controladores y modelos de datos",
-                "Conexión con bases de datos SQL y NoSQL",
-                "Ejercicio: Construir una API REST con Express.js y MongoDB",
+                { title: "1.1. Principios comunes para las arquitecturas", subtopics: [] },
+                { title: "1.2. Arquitectura monolítica", subtopics: ["1.2.1. Contenedores"] },
+                {
+                    title: "1.3. Arquitectura tradicional de n-capas", subtopics: [
+                        "1.3.1. Capa de acceso a datos",
+                        "1.3.2. Capa de lógica de negocios",
+                        "1.3.3. Interfaz de usuario",
+                    ]
+                },
+                {
+                    title: "1.4. Arquitectura de cebolla (arquitectura limpia)", subtopics: [
+                        "1.4.1. Modelo del dominio",
+                        "1.4.2. Interfaz de usuario",
+                        "1.4.3. Infraestructura",
+                        "1.4.4. Pruebas",
+                    ]
+                },
+                {
+                    title: "1.5. Arquitectura hexagonal", subtopics: [
+                        "1.5.1. Dominio de la aplicación",
+                        "1.5.2. Puertos",
+                        "1.5.3. Capa de servicios",
+                        "1.5.4. Adaptadores",
+                    ]
+                },
+                {
+                    title: "1.6. Arquitectura de microservicios", subtopics: [
+                        "1.6.1. Fundamentos de microservicios",
+                        "1.6.2. Arquitectura del dominio",
+                        "1.6.3. Modelo de referencia",
+                        "1.6.4. Modelo de implementación",
+                        "1.6.5. Modelo de despliegue",
+                        "1.6.6. Diseño de aplicaciones web",
+                    ]
+                },
             ]
         },
     ],
