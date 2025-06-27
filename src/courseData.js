@@ -92,7 +92,7 @@ export const courseData = {
                     <div className="prose max-w-none">
                         <h4 className="text-xl font-bold text-purple-700">Objetivo General del Polilibro</h4>
                         <p>Aplicar los conceptos y modelos de los frameworks de desarrollo web más populares para crear aplicaciones robustas, escalables y seguras, diferenciando claramente las responsabilidades del lado del cliente y del lado del servidor.</p>
-                        <p>El apoyo didáctico de la unidad de aprendizaje de "Web Client and Backend Development Frameworks" tiene la finalidad complementar y reforzar el curso en su modalidad presencial.</p>
+                        <p>El apoyo didáctico de la unidad de aprendizaje de &quot;Web Client and Backend Development Frameworks&quot; tiene la finalidad complementar y reforzar el curso en su modalidad presencial.</p>
                     </div>
                 )
             },
