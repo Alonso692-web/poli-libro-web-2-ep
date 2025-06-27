@@ -10,13 +10,25 @@ const Header = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="flex items-center space-x-2 text-lg">
-                        <a href="#" aria-label="Facebook" className="hover:text-gray-300"><FaFacebookF /></a>
-                        <a href="#" aria-label="Twitter" className="hover:text-gray-300"><FaTwitter /></a>
-                        <a href="#" aria-label="Instagram" className="hover:text-gray-300"><FaInstagram /></a>
+                        <a href="https://www.facebook.com/IPNZacatecas"
+                            aria-label="Facebook"
+                            className="hover:text-gray-300"
+                            target="_blank"
+                            rel="noopener noreferrer"><FaFacebookF /></a>
+                        <a href="https://www.instagram.com/ipn_zacatecas?igsh=OTYzcGI1aWptMW0w"
+                            aria-label="Instagram"
+                            className="hover:text-gray-300"
+                            target="_blank"
+                            rel="noopener noreferrer"><FaInstagram /></a>
                     </div>
-                    <button className="bg-white text-[#003972] font-bold py-1 px-4 rounded hover:bg-gray-200">
+                    <a
+                        href="https://virtual.upiiz.ipn.mx/"
+                        className="bg-white text-[#003972] font-bold py-1 px-4 rounded hover:bg-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         Ingresar
-                    </button>
+                    </a>
                 </div>
             </div>
         </header>
