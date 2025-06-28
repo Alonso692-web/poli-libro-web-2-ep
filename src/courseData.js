@@ -1,9 +1,8 @@
-// src/courseData.js
-// Las importaciones de iconos y de Image permanecen igual
-import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle } from 'react-icons/fa';
+import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle, FaRegLightbulb, FaTasks } from 'react-icons/fa';
 import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
+import * as ContentUnit3 from "./components/ContentUnit3";
 
 const FeatureIcon = ({ icon }) => (
     <div className="flex justify-center mb-6">
@@ -30,27 +29,11 @@ const BienvenidaContent = () => (
             <h4 className="text-xl font-bold text-purple-700">Comunidad estudiantil del Instituto Politécnico Nacional (IPN)</h4>
             <p>La Academia de Sistemas Computacionales de la Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas (UPIIZ) les da la más cordial bienvenida.</p>
             <p>El siguiente material didáctico de la unidad de aprendizaje Web Client and Backend Development Frameworks ha sido creado con la finalidad de apoyar su formación en la Ingeniería en Sistemas Computacionales, dentro del sistema escolarizado.</p>
-            <p>El desarrollo de aplicaciones web y el uso de frameworks para clientes y servidores son fundamentales en el ámbito de la ingeniería de software. Estos conocimientos permiten diseñar, implementar y desplegar soluciones tecnológicas modernas, asegurando eficiencia, escalabilidad y seguridad en entornos digitales.</p>
-            <p>Este recurso en forma de polilibro pretende ser sencillo en su lenguaje y con explicaciones claras, sin demeritar su nivel académico. A través de este material, explorarán arquitecturas de desarrollo web, la implementación de APIs, el desarrollo de aplicaciones del lado del cliente y del servidor, así como el uso de servidores y contenedores en la nube, con el objetivo de fortalecer sus competencias en el desarrollo de software.</p>
+            <p>El desarrollo web en cliente y servidor tiene una relación estrecha y ambos son fundamentales para entender los principios básicos que rigen las aplicaciones digitales en nuestra vida cotidiana. Desde el acceso a información en la web hasta la interacción en redes sociales y plataformas de comercio electrónico, estos conceptos han permitido la modernidad y el avance tecnológico en el que vivimos hoy en día.</p>
+            <p>Este recurso en forma de polilibro pretende ser sencillo en su lenguaje y con explicaciones claras, sin perder rigor académico. Su objetivo es guiar al lector a través de los fundamentos y aplicaciones prácticas del desarrollo web, abordando tanto el lado del cliente como el del servidor, facilitando el aprendizaje de herramientas y técnicas esenciales en este campo.</p>
         </div>
         <div className="flex-shrink-0">
             <Image src="/images/bienvenidos.jpg" alt="Bienvenidos" width={400} height={250} className="rounded-md shadow-lg" />
-        </div>
-    </div>
-);
-
-const U1_1_Content = () => (
-    <div>
-        <h3 className="text-xl font-bold text-gray-800 mb-4">1. Introducción</h3>
-        <div className="prose max-w-none text-gray-700">
-            <p>Los seres vivos requerimos de la electricidad para nuestra supervivencia. Si bien aún en la actualidad existen poblaciones que no son suministradas con líneas de trasmisión eléctricas, no significa que no esté presente la electricidad.</p>
-            <p>En el desarrollo de software, los <strong>principios de arquitectura</strong> son como las leyes de la física: guías fundamentales que aseguran que nuestras creaciones sean robustas, mantenibles y escalables. Definen la estructura base y las reglas de comunicación entre las diferentes partes de una aplicación.</p>
-        </div>
-        <div className="my-8 flex justify-center">
-            <figure>
-                <Image src="/images/arquitectura.jpg" alt="Diagrama de Arquitectura" width={600} height={350} className="rounded-lg shadow-md" />
-                <figcaption className="text-center text-sm text-gray-500 mt-2">Figura 1.1.1: Las arquitecturas definen la estructura.</figcaption>
-            </figure>
         </div>
     </div>
 );
@@ -63,7 +46,22 @@ const PlaceholderContent = ({ title }) => (
     </div>
 );
 
-
+const References_U3 = () => (
+    <div>
+        <h4>Bibliografía y Recursos Digitales</h4>
+        <h5>Bibliografía Básica:</h5>
+        <ul>
+            <li>Ottinger, J. y Linwood, J. (2022). <em>Beginning Hibernate 6: Java Persistence from Beginner to Pro</em>. Apress.</li>
+            <li>Varanasi, B. y Bartkov, M. (2022). <em>Spring REST: Building Java Microservices and Cloud Applications</em>. Apress.</li>
+            <li>Massé, M. (2012). <em>REST API Design Rulebook</em>. O&apos;REILLY.</li>
+        </ul>
+        <h5>Recursos Digitales:</h5>
+        <ul>
+            <li>KODOTI (2020). <a href="https://www.youtube.com/watch?v=ZPA5ldaX1K4&list=PL9prAn3zOWZ6R-YY7uiW-NAazOw1RbBoj" target="_blank" rel="noopener noreferrer">Diseño de una API RESTFul</a> [Video]. YouTube.</li>
+            <li>Peyrott, S. (2018). <a href="https://auth0.com/resources/ebooks/jwt-handbook" target="_blank" rel="noopener noreferrer">JWT HANDBOOK</a>. Auth0.</li>
+        </ul>
+    </div>
+);
 
 export const courseData = {
     title: "Web Client and Backend Development Frameworks",
@@ -104,8 +102,23 @@ export const courseData = {
                 content: (
                     <div className="prose max-w-none">
                         <h4 className="text-xl font-bold text-purple-700">El concepto de Desarrollo Web en Cliente y Servidor</h4>
-                        <p>El desarrollo web moderno se basa en la interacción entre el <strong>cliente</strong> (tu navegador, que solicita información) y el <strong>servidor</strong> (una computadora remota que procesa la solicitud y devuelve una respuesta).</p>
-                        <p>Frameworks como <strong>React</strong> se ejecutan en el cliente para crear interfaces de usuario dinámicas y ricas en interactividad, mientras que frameworks como <strong>Express.js</strong> o <strong>Django</strong> se ejecutan en el servidor para gestionar la lógica de negocio, el acceso a bases de datos y la seguridad.</p>
+                        <p>El desarrollo web moderno se basa en la interacción entre el cliente y el servidor para ofrecer experiencias dinámicas y funcionales a los usuarios. Desde la carga de una simple página web hasta la implementación de complejas aplicaciones en línea, la comunicación entre estos dos componentes es fundamental. El cliente, representado por navegadores y aplicaciones, solicita información, mientras que el servidor procesa dichas solicitudes y devuelve respuestas, permitiendo la interacción eficiente y segura entre usuarios y sistemas.</p>
+                        &nbsp;
+                        <p>Los frameworks de desarrollo en cliente y servidor han revolucionado la creación de aplicaciones web, facilitando la programación, mejorando la seguridad y optimizando el rendimiento. Tecnologías como React, Angular y Vue.js dominan el desarrollo del lado del cliente, mientras que frameworks como Express.js, Django, Laravel y Spring Boot lideran el backend, proporcionando estructuras robustas para la gestión de datos y la autenticación.</p>
+                        &nbsp;
+                        <p>El uso de estos frameworks permite desarrollar aplicaciones escalables y seguras, integrando bases de datos, APIs y otros servicios esenciales para el funcionamiento del ecosistema digital actual.</p>
+                        &nbsp;
+                        &nbsp;
+                        <h4 className="text-xl font-bold text-purple-700">A cerca del polilibro</h4>
+                        <ul className="list-none p-0 m-0">
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Este material did&aacute;ctico est&aacute; estructurado para abordar de manera progresiva los conceptos esenciales del desarrollo web tanto en el cliente como en el servidor.</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Se iniciar&aacute; con una introducci&oacute;n a la arquitectura cliente-servidor, explicando los protocolos HTTP y WebSockets, fundamentales para la comunicaci&oacute;n entre ambos entornos. Nota: Agregar informaci&oacute;n sobre arquitecturas. **</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">En cuanto al backend, se abordar&aacute; el uso de frameworks como Node.js con Express, Django con Python, Laravel con PHP y Spring Boot con Java. Se estudiar&aacute; la implementaci&oacute;n de controladores, modelos de datos y seguridad, as&iacute; como la conexi&oacute;n con bases de datos SQL y NoSQL.</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Posteriormente, se revisar&aacute;n los frameworks de desarrollo en el cliente, explorando las ventajas y caracter&iacute;sticas de bibliotecas como React, Angular y Vue.js. Se analizar&aacute; c&oacute;mo gestionan el estado, la interactividad y el rendimiento, as&iacute; como su integraci&oacute;n con APIs REST y GraphQL.</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Tambi&eacute;n se analizar&aacute; la gesti&oacute;n de autenticaci&oacute;n y autorizaci&oacute;n mediante JWT, OAuth y OpenID Connect, garantizando la protecci&oacute;n de la informaci&oacute;n y el acceso seguro a los recursos del sistema.</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Finalmente, se revisar&aacute;n los principios de despliegue y escalabilidad en la nube, cubriendo servicios como AWS, Azure y Google Cloud, as&iacute; como la implementaci&oacute;n de CI/CD para la automatizaci&oacute;n de pruebas y despliegue continuo. (Nota: agregar informaci&oacute;n sobre Contenedores.).</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Este material proporciona una gu&iacute;a completa para el aprendizaje del desarrollo web moderno, permitiendo a los estudiantes adquirir habilidades fundamentales para la creaci&oacute;n de aplicaciones eficientes y seguras en el entorno digital actual.</li>
+                        </ul>
                     </div>
                 )
             },
@@ -142,6 +155,7 @@ export const courseData = {
                 id: 'organizacion',
                 icon: <FaListAlt />,
                 title: "Organización del Polilibro",
+                /*content: <OrganizationContent />*/
                 content: (
                     <div className="text-center">
                         { }
@@ -227,7 +241,6 @@ export const courseData = {
 
         ]
     },
-
     units:
         [
             {
@@ -575,37 +588,37 @@ export const courseData = {
                         id: "3.1",
                         slug: "3-1-mapeo-objeto-relacional",
                         title: "3.1. Mapeo objeto relacional",
-                        component: <PlaceholderContent title="3.1. Mapeo objeto relacional" />,
+                        component: <ContentUnit3.Content_3_1 />,
                         subtopics: [
                             {
                                 id: "3.1.1",
                                 slug: "3-1-1-mapeo-de-entidades",
                                 title: "3.1.1. Mapeo de entidades",
-                                component: <PlaceholderContent title="3.1.1. Mapeo de entidades" />
+                                component: <ContentUnit3.Content_3_1_1 />
                             },
                             {
                                 id: "3.1.2",
                                 slug: "3-1-2-mapeo-de-atributos-persistentes",
                                 title: "3.1.2. Mapeo de atributos persistentes",
-                                component: <PlaceholderContent title="3.1.2. Mapeo de atributos persistentes" />
+                                component: <ContentUnit3.Content_3_1_2 />
                             },
                             {
                                 id: "3.1.3",
                                 slug: "3-1-3-mapeo-de-atributos-no-persistentes",
                                 title: "3.1.3. Mapeo de atributos no persistentes",
-                                component: <PlaceholderContent title="3.1.3. Mapeo de atributos no persistentes" />
+                                component: <ContentUnit3.Content_3_1_3 />
                             },
                             {
                                 id: "3.1.4",
                                 slug: "3-1-4-mapeo-de-asociaciones",
                                 title: "3.1.4. Mapeo de asociaciones",
-                                component: <PlaceholderContent title="3.1.4. Mapeo de asociaciones" />
+                                component: <ContentUnit3.Content_3_1_4 />
                             },
                             {
                                 id: "3.1.5",
                                 slug: "3-1-5-estrategias-de-recuperacion-de-asociaciones",
                                 title: "3.1.5. Estrategias de recuperación de asociaciones",
-                                component: <PlaceholderContent title="3.1.5. Estrategias de recuperación de asociaciones" />
+                                component: <ContentUnit3.Content_3_1_5 />
                             }
                         ]
                     },
@@ -613,31 +626,31 @@ export const courseData = {
                         id: "3.2",
                         slug: "3-2-tecnologias-para-la-generacion-de-servicios",
                         title: "3.2. Tecnologías para la generación de servicios",
-                        component: <PlaceholderContent title="3.2. Tecnologías para la generación de servicios" />,
+                        component: <ContentUnit3.Content_3_2 />,
                         subtopics: [
                             {
                                 id: "3.2.1",
                                 slug: "3-2-1-modelo-de-madurez-de-richardson",
                                 title: "3.2.1. Modelo de madurez de Richardson",
-                                component: <PlaceholderContent title="3.2.1. Modelo de madurez de Richardson" />
+                                component: <ContentUnit3.Content_3_2_1 />
                             },
                             {
                                 id: "3.2.2",
                                 slug: "3-2-2-metodos-del-protocolo-http",
                                 title: "3.2.2. Métodos del protocolo HTTP",
-                                component: <PlaceholderContent title="3.2.2. Métodos del protocolo HTTP" />
+                                component: <ContentUnit3.Content_3_2_2 />
                             },
                             {
                                 id: "3.2.3",
                                 slug: "3-2-3-codigos-de-estado-del-protocolo-http",
                                 title: "3.2.3. Códigos de estado del protocolo HTTP",
-                                component: <PlaceholderContent title="3.2.3. Códigos de estado del protocolo HTTP" />
+                                component: <ContentUnit3.Content_3_2_3 />
                             },
                             {
                                 id: "3.2.4",
                                 slug: "3-2-4-manejo-de-errores",
                                 title: "3.2.4. Manejo de errores",
-                                component: <PlaceholderContent title="3.2.4. Manejo de errores" />
+                                component: <ContentUnit3.Content_3_2_4 />
                             }
                         ]
                     },
@@ -645,29 +658,36 @@ export const courseData = {
                         id: "3.3",
                         slug: "3-3-servicios-apis-y-endpoints",
                         title: "3.3. Servicios, APIS y endpoints",
-                        component: <PlaceholderContent title="3.3. Servicios, APIS y endpoints" />,
+                        component: <ContentUnit3.Content_3_3 />,
                         subtopics: [
                             {
                                 id: "3.3.1",
                                 slug: "3-3-1-generacion-y-publicacion",
                                 title: "3.3.1. Generación y publicación",
-                                component: <PlaceholderContent title="3.3.1. Generación y publicación" />
+                                component: <ContentUnit3.Content_3_3_1 />
                             },
                             {
                                 id: "3.3.2",
                                 slug: "3-3-2-control-de-acceso-http-cors",
                                 title: "3.3.2. Control de acceso HTTP (CORS)",
-                                component: <PlaceholderContent title="3.3.2. Control de acceso HTTP (CORS)" />
+                                component: <ContentUnit3.Content_3_3_2 />
                             },
                             {
                                 id: "3.3.3",
                                 slug: "3-3-3-documentacion",
                                 title: "3.3.3. Documentación",
-                                component: <PlaceholderContent title="3.3.3. Documentación" />
+                                component: <ContentUnit3.Content_3_3_3 />
                             }
                         ]
+                    },
+                    {
+                        id: "3.4",
+                        slug: "3-4-referencias",
+                        title: "Referencias",
+                        component: <References_U3 />,
+                        subtopics: []
                     }
                 ]
-            }
+            },
         ],
 };

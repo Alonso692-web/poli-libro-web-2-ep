@@ -11,6 +11,7 @@ export default function Unidad1Page() {
 
     const breadcrumbItems = [
         { name: 'Cursos', href: '/' },
+        { name: "Polilibro", href: "/" },
         { name: courseData.title, href: '/' },
         { name: `Unidad I: ${unit.subtitle}`, href: `/${unit.slug}` }
     ];

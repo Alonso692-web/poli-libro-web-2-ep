@@ -12,7 +12,7 @@ export default function HomePage() {
 
   const breadcrumbItems = [
     { name: 'Cursos', href: '#' },
-    { name: 'Polilibros', href: '#' },
+    { name: 'Polilibros', href: '/' },
     { name: courseData.title, href: '/' }
   ];
 
