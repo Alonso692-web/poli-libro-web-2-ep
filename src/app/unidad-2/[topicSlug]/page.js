@@ -58,6 +58,7 @@ export default async function TopicDetailPage({ params }) {
 
     const breadcrumbItems = [
         { name: "Cursos", href: "/" },
+        { name: "Polilibros", href: "/" },
         { name: courseData.title, href: "/" },
         { name: unit.title, href: `/${unit.slug}` },
         { name: currentTopic.title, href: `/${unit.slug}/${currentTopic.slug}` }

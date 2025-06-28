@@ -23,23 +23,23 @@ export default function HomePage() {
         <Breadcrumb items={breadcrumbItems} />
 
         { }
-        <div className="relative mb-12">
+        <div className="relative mb-12 h-[220px]">
           <Image
             src="/banners/main-banner.jpg"
             alt="Banner principal"
-            width={900}
-            height={300}
-            className="rounded-lg w-full object-cover"
+            width={200}
+            height={50}
+            className="rounded-lg w-full h-64 object-cover shadow-md group-hover:opacity-90 transition-opacity"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+          <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center rounded-lg">
             <div className="text-center text-white p-4">
-              <p className="text-lg">Polilibro</p>
-              <h1 className="text-4xl font-extrabold">{courseData.title}</h1>
+              <p className="text-white text-2xl font-bold">Polilibro</p>
+              <h1 className="text-white text-4xl font-extrabold">{courseData.title}</h1>
             </div>
           </div>
         </div>
 
-        { }
+        <div className="mb-10"></div>
         <div className="space-y-10">
           {courseSections.map((section) => (
             <div key={section.slug}>
@@ -50,13 +50,13 @@ export default function HomePage() {
 
               { }
               <Link href={section.slug}>
-                <div className="block group">
+                <div className="block group max-h-64 h-68 pb-1">
                   <Image
                     src={section.banner}
                     alt={section.subtitle}
                     width={900}
                     height={200}
-                    className="rounded-lg w-full h-48 object-cover shadow-md group-hover:opacity-90 transition-opacity"
+                    className="rounded-lg h-full object-cover shadow-md group-hover:opacity-90 transition-opacity border border-black"
                   />
                 </div>
               </Link>
