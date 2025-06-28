@@ -3,6 +3,7 @@ import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
 import * as ContentUnit3 from "./components/ContentUnit3";
+import * as TableContentInfoGen from "./components/TableToolsInfoGen";
 
 const FeatureIcon = ({ icon }) => (
     <div className="flex justify-center mb-6">
@@ -46,23 +47,6 @@ const PlaceholderContent = ({ title }) => (
     </div>
 );
 
-const References_U3 = () => (
-    <div>
-        <h4>Bibliografía y Recursos Digitales</h4>
-        <h5>Bibliografía Básica:</h5>
-        <ul>
-            <li>Ottinger, J. y Linwood, J. (2022). <em>Beginning Hibernate 6: Java Persistence from Beginner to Pro</em>. Apress.</li>
-            <li>Varanasi, B. y Bartkov, M. (2022). <em>Spring REST: Building Java Microservices and Cloud Applications</em>. Apress.</li>
-            <li>Massé, M. (2012). <em>REST API Design Rulebook</em>. O&apos;REILLY.</li>
-        </ul>
-        <h5>Recursos Digitales:</h5>
-        <ul>
-            <li>KODOTI (2020). <a href="https://www.youtube.com/watch?v=ZPA5ldaX1K4&list=PL9prAn3zOWZ6R-YY7uiW-NAazOw1RbBoj" target="_blank" rel="noopener noreferrer">Diseño de una API RESTFul</a> [Video]. YouTube.</li>
-            <li>Peyrott, S. (2018). <a href="https://auth0.com/resources/ebooks/jwt-handbook" target="_blank" rel="noopener noreferrer">JWT HANDBOOK</a>. Auth0.</li>
-        </ul>
-    </div>
-);
-
 export const courseData = {
     title: "Web Client and Backend Development Frameworks",
     instructor: "Efraín Arredondo Morales",
@@ -83,17 +67,7 @@ export const courseData = {
                 id: 'tecnologia',
                 icon: <FaCog />,
                 title: "Complementos tecnológicos",
-                content: (
-                    <div className="prose max-w-none">
-                        <h4 className="text-xl font-bold text-purple-700">Herramientas para la Plataforma Educativa</h4>
-                        <p>Para comenzar, identifica las necesidades y/o requerimientos tecnológicos que puedas presentar. Para tener una experiencia de aprendizaje exitosa, es fundamental familiarizarse con las herramientas que utilizaremos.</p>
-                        <ul>
-                            <li><strong>Visual Studio Code:</strong> Un editor de código moderno y extensible.</li>
-                            <li><strong>Node.js:</strong> El entorno de ejecución para JavaScript en el servidor.</li>
-                            <li><strong>Git y una cuenta de GitHub:</strong> Para el control de versiones de nuestros proyectos.</li>
-                        </ul>
-                    </div >
-                )
+                content: <TableContentInfoGen.TechToolsContent />
             },
             {
                 id: 'concepto',
@@ -684,7 +658,7 @@ export const courseData = {
                         id: "3.4",
                         slug: "3-4-referencias",
                         title: "Referencias",
-                        component: <References_U3 />,
+                        component: <ContentUnit3.References_U3 />,
                         subtopics: []
                     }
                 ]

@@ -23,7 +23,7 @@ export default function Unidad1Page() {
                 <Breadcrumb items={breadcrumbItems} />
                 <div className="relative mb-8">
                     <Image src={unit.banner} alt={unit.title} width={900} height={200} className="rounded-lg w-full h-48 object-cover" />
-                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                    <div className="absolute inset-0 bg-blue-700 bg-opacity-50 flex items-center justify-center rounded-lg">
                         <h1 className="text-white text-4xl font-extrabold text-center">{unit.title}<br />{unit.subtitle}</h1>
                     </div>
                 </div>

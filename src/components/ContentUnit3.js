@@ -159,3 +159,20 @@ export const Content_3_3_3 = () => (
         <p>Herramientas como <strong>Swagger (OpenAPI)</strong> son el estándar de la industria para generar documentación interactiva y legible por máquina.</p>
     </div>
 );
+
+export const References_U3 = () => (
+    <div>
+        <h4>Bibliografía y Recursos Digitales</h4>
+        <h5>Bibliografía Básica:</h5>
+        <ul>
+            <li>Ottinger, J. y Linwood, J. (2022). <em>Beginning Hibernate 6: Java Persistence from Beginner to Pro</em>. Apress.</li>
+            <li>Varanasi, B. y Bartkov, M. (2022). <em>Spring REST: Building Java Microservices and Cloud Applications</em>. Apress.</li>
+            <li>Massé, M. (2012). <em>REST API Design Rulebook</em>. O&apos;REILLY.</li>
+        </ul>
+        <h5>Recursos Digitales:</h5>
+        <ul>
+            <li>KODOTI (2020). <a href="https://www.youtube.com/watch?v=ZPA5ldaX1K4&list=PL9prAn3zOWZ6R-YY7uiW-NAazOw1RbBoj" target="_blank" rel="noopener noreferrer">Diseño de una API RESTFul</a> [Video]. YouTube.</li>
+            <li>Peyrott, S. (2018). <a href="https://auth0.com/resources/ebooks/jwt-handbook" target="_blank" rel="noopener noreferrer">JWT HANDBOOK</a>. Auth0.</li>
+        </ul>
+    </div>
+);
