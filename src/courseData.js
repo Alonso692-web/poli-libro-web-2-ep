@@ -39,6 +39,31 @@ const BienvenidaContent = () => (
     </div>
 );
 
+const U1_1_Content = () => (
+    <div>
+        <h3 className="text-xl font-bold text-gray-800 mb-4">1. Introducción</h3>
+        <div className="prose max-w-none text-gray-700">
+            <p>Los seres vivos requerimos de la electricidad para nuestra supervivencia. Si bien aún en la actualidad existen poblaciones que no son suministradas con líneas de trasmisión eléctricas, no significa que no esté presente la electricidad.</p>
+            <p>En el desarrollo de software, los <strong>principios de arquitectura</strong> son como las leyes de la física: guías fundamentales que aseguran que nuestras creaciones sean robustas, mantenibles y escalables. Definen la estructura base y las reglas de comunicación entre las diferentes partes de una aplicación.</p>
+        </div>
+        <div className="my-8 flex justify-center">
+            <figure>
+                <Image src="/images/arquitectura.jpg" alt="Diagrama de Arquitectura" width={600} height={350} className="rounded-lg shadow-md" />
+                <figcaption className="text-center text-sm text-gray-500 mt-2">Figura 1.1.1: Las arquitecturas definen la estructura.</figcaption>
+            </figure>
+        </div>
+    </div>
+);
+
+// Placeholder para otros contenidos
+const PlaceholderContent = ({ title }) => (
+    <div className="text-center py-12 text-gray-500">
+        <h3 className="text-2xl font-bold mb-2">Contenido para &quot;{title}&quot;</h3>
+        <p>Este recurso está en construcción.</p>
+    </div>
+);
+
+
 
 export const courseData = {
     title: "Web Client and Backend Development Frameworks",
@@ -202,127 +227,447 @@ export const courseData = {
 
         ]
     },
-    units: [
-        {
-            id: 1,
-            slug: "unidad-1",
-            title: "Unidad I",
-            subtitle: "Arquitecturas de desarrollo web",
-            banner: "/banners/intro.jpg",
-            subtext: "Fundamentos, arquitecturas y principios del desarrollo web moderno.",
-            // --- CONTENIDO OFICIAL DE LA UNIDAD 1 ---
-            content: [
-                { title: "1.1. Principios comunes para las arquitecturas", subtopics: [] },
-                { title: "1.2. Arquitectura monolítica", subtopics: ["1.2.1. Contenedores"] },
-                {
-                    title: "1.3. Arquitectura tradicional de n-capas", subtopics: [
-                        "1.3.1. Capa de acceso a datos",
-                        "1.3.2. Capa de lógica de negocios",
-                        "1.3.3. Interfaz de usuario",
-                    ]
-                },
-                {
-                    title: "1.4. Arquitectura de cebolla (arquitectura limpia)", subtopics: [
-                        "1.4.1. Modelo del dominio",
-                        "1.4.2. Interfaz de usuario",
-                        "1.4.3. Infraestructura",
-                        "1.4.4. Pruebas",
-                    ]
-                },
-                {
-                    title: "1.5. Arquitectura hexagonal", subtopics: [
-                        "1.5.1. Dominio de la aplicación",
-                        "1.5.2. Puertos",
-                        "1.5.3. Capa de servicios",
-                        "1.5.4. Adaptadores",
-                    ]
-                },
-                {
-                    title: "1.6. Arquitectura de microservicios", subtopics: [
-                        "1.6.1. Fundamentos de microservicios",
-                        "1.6.2. Arquitectura del dominio",
-                        "1.6.3. Modelo de referencia",
-                        "1.6.4. Modelo de implementación",
-                        "1.6.5. Modelo de despliegue",
-                        "1.6.6. Diseño de aplicaciones web",
-                    ]
-                },
-            ]
-        },
-        {
-            id: 2,
-            slug: "unidad-2",
-            title: "Unidad II",
-            subtitle: "Desarrollo de API's y servicios web",
-            banner: "/banners/unidad2.jpg",
-            subtext: "Principios, seguridad y buenas prácticas en la creación de API's.",
-            content: [
-                { title: "2.1. Servicios web", subtopics: ["2.1.1. SOAP", "2.1.2. REST"] },
-                { title: "2.2. Intercambio de datos entre sistemas heterogéneos", subtopics: ["2.2.1. XML", "2.2.2. JSON"] },
-                {
-                    title: "2.3. Principios arquitectónicos de una API RESTful", subtopics: [
-                        "2.3.1. URIs",
-                        "2.3.2. Verbo GET para obtener un recurso",
-                        "2.3.3. Verbo POST para crear un recurso",
-                        "2.3.4. Verbo PUT para actualizar un recurso",
-                        "2.3.5. Verbo DELETE para eliminar un recurso",
-                        "2.3.6. Códigos de respuesta",
-                        "2.3.7. Endpoints",
-                    ]
-                },
-                {
-                    title: "2.4. Herramientas de depuración", subtopics: [
-                        "2.4.1. Consumir servicios de una API de terceros",
-                    ]
-                },
-                { title: "2.5. Buenas prácticas para la creación de API's", subtopics: [] },
-                {
-                    title: "2.6. Seguridad de servicios", subtopics: [
-                        "2.6.1. Seguridad basada en Sesiones",
-                        "2.6.2. Autenticación HTTP Básica",
-                        "2.6.3. Autenticación Implícita",
-                        "2.6.4. Seguridad basada en certificados",
-                        "2.6.5. Autenticación basada en tokens",
-                        "2.6.6. Estándares para autorización de APIs",
-                    ]
-                },
-            ]
-        },
 
-        // --- UNIDAD 3 ---
-        {
-            id: 3,
-            slug: "unidad-3",
-            title: "Unidad III",
-            subtitle: "Desarrollo de aplicaciones del lado del servidor",
-            banner: "/banners/unidad3.jpg",
-            subtext: "Mapeo, tecnologías y servicios para el backend.",
-            content: [
-                {
-                    title: "3.1. Mapeo objeto relacional", subtopics: [
-                        "3.1.1. Mapeo de entidades",
-                        "3.1.2. Mapeo de atributos persistentes",
-                        "3.1.3. Mapeo de atributos no persistentes",
-                        "3.1.4. Mapeo de asociaciones",
-                        "3.1.5. Estrategias de recuperación de asociaciones",
-                    ]
-                },
-                {
-                    title: "3.2. Tecnologías para la generación de servicios", subtopics: [
-                        "3.2.1. Modelo de madurez de Richardson",
-                        "3.2.2. Métodos del protocolo HTTP",
-                        "3.2.3. Códigos de estado del protocolo HTTP",
-                        "3.2.4. Manejo de errores",
-                    ]
-                },
-                {
-                    title: "3.3. Servicios, APIS y endpoints", subtopics: [
-                        "3.3.1. Generación y publicación",
-                        "3.3.2. Control de acceso HTTP (CORS)",
-                        "3.3.3. Documentación",
-                    ]
-                },
-            ]
-        }
-    ],
+    units:
+        [
+            {
+                id: 1,
+                slug: "unidad-1",
+                title: "Unidad I",
+                subtitle: "Arquitecturas de desarrollo web",
+                banner: "/banners/intro.jpg",
+                subtext: "Fundamentos, arquitecturas y principios del desarrollo web moderno.",
+                objective: "Diseña una aplicación web con base en la arquitectura de microservicios, aplicando los principios comunes y los diferentes modelos arquitectónicos para una solución robusta y escalable.",
+                content: [
+                    {
+                        id: "1.1",
+                        slug: "1-1-principios-comunes-para-las-arquitecturas",
+                        title: "1.1. Principios comunes para las arquitecturas",
+                        component: <PlaceholderContent title="1.1. Principios comunes para las arquitecturas" />,
+                        subtopics: []
+                    },
+                    {
+                        id: "1.2",
+                        slug: "1-2-arquitectura-monolitica",
+                        title: "1.2. Arquitectura monolítica",
+                        component: <PlaceholderContent title="1.2. Arquitectura monolítica" />,
+                        subtopics: [
+                            {
+                                id: "1.2.1",
+                                slug: "1-2-1-contenedores",
+                                title: "1.2.1. Contenedores",
+                                component: <PlaceholderContent title="1.2.1. Contenedores" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "1.3",
+                        slug: "1-3-arquitectura-tradicional-de-n-capas",
+                        title: "1.3. Arquitectura tradicional de n-capas",
+                        component: <PlaceholderContent title="1.3. Arquitectura tradicional de n-capas" />,
+                        subtopics: [
+                            {
+                                id: "1.3.1",
+                                slug: "1-3-1-capa-de-acceso-a-datos",
+                                title: "1.3.1. Capa de acceso a datos",
+                                component: <PlaceholderContent title="1.3.1. Capa de acceso a datos" />
+                            },
+                            {
+                                id: "1.3.2",
+                                slug: "1-3-2-capa-de-logica-de-negocios",
+                                title: "1.3.2. Capa de lógica de negocios",
+                                component: <PlaceholderContent title="1.3.2. Capa de lógica de negocios" />
+                            },
+                            {
+                                id: "1.3.3",
+                                slug: "1-3-3-interfaz-de-usuario",
+                                title: "1.3.3. Interfaz de usuario",
+                                component: <PlaceholderContent title="1.3.3. Interfaz de usuario" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "1.4",
+                        slug: "1-4-arquitectura-de-cebolla-arquitectura-limpia",
+                        title: "1.4. Arquitectura de cebolla (arquitectura limpia)",
+                        component: <PlaceholderContent title="1.4. Arquitectura de cebolla (arquitectura limpia)" />,
+                        subtopics: [
+                            {
+                                id: "1.4.1",
+                                slug: "1-4-1-modelo-del-dominio",
+                                title: "1.4.1. Modelo del dominio",
+                                component: <PlaceholderContent title="1.4.1. Modelo del dominio" />
+                            },
+                            {
+                                id: "1.4.2",
+                                slug: "1-4-2-interfaz-de-usuario",
+                                title: "1.4.2. Interfaz de usuario",
+                                component: <PlaceholderContent title="1.4.2. Interfaz de usuario" />
+                            },
+                            {
+                                id: "1.4.3",
+                                slug: "1-4-3-infraestructura",
+                                title: "1.4.3. Infraestructura",
+                                component: <PlaceholderContent title="1.4.3. Infraestructura" />
+                            },
+                            {
+                                id: "1.4.4",
+                                slug: "1-4-4-pruebas",
+                                title: "1.4.4. Pruebas",
+                                component: <PlaceholderContent title="1.4.4. Pruebas" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "1.5",
+                        slug: "1-5-arquitectura-hexagonal",
+                        title: "1.5. Arquitectura hexagonal",
+                        component: <PlaceholderContent title="1.5. Arquitectura hexagonal" />,
+                        subtopics: [
+                            {
+                                id: "1.5.1",
+                                slug: "1-5-1-dominio-de-la-aplicacion",
+                                title: "1.5.1. Dominio de la aplicación",
+                                component: <PlaceholderContent title="1.5.1. Dominio de la aplicación" />
+                            },
+                            {
+                                id: "1.5.2",
+                                slug: "1-5-2-puertos",
+                                title: "1.5.2. Puertos",
+                                component: <PlaceholderContent title="1.5.2. Puertos" />
+                            },
+                            {
+                                id: "1.5.3",
+                                slug: "1-5-3-capa-de-servicios",
+                                title: "1.5.3. Capa de servicios",
+                                component: <PlaceholderContent title="1.5.3. Capa de servicios" />
+                            },
+                            {
+                                id: "1.5.4",
+                                slug: "1-5-4-adaptadores",
+                                title: "1.5.4. Adaptadores",
+                                component: <PlaceholderContent title="1.5.4. Adaptadores" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "1.6",
+                        slug: "1-6-arquitectura-de-microservicios",
+                        title: "1.6. Arquitectura de microservicios",
+                        component: <PlaceholderContent title="1.6. Arquitectura de microservicios" />,
+                        subtopics: [
+                            {
+                                id: "1.6.1",
+                                slug: "1-6-1-fundamentos-de-microservicios",
+                                title: "1.6.1. Fundamentos de microservicios",
+                                component: <PlaceholderContent title="1.6.1. Fundamentos de microservicios" />
+                            },
+                            {
+                                id: "1.6.2",
+                                slug: "1-6-2-arquitectura-del-dominio",
+                                title: "1.6.2. Arquitectura del dominio",
+                                component: <PlaceholderContent title="1.6.2. Arquitectura del dominio" />
+                            },
+                            {
+                                id: "1.6.3",
+                                slug: "1-6-3-modelo-de-referencia",
+                                title: "1.6.3. Modelo de referencia",
+                                component: <PlaceholderContent title="1.6.3. Modelo de referencia" />
+                            },
+                            {
+                                id: "1.6.4",
+                                slug: "1-6-4-modelo-de-implementacion",
+                                title: "1.6.4. Modelo de implementación",
+                                component: <PlaceholderContent title="1.6.4. Modelo de implementación" />
+                            },
+                            {
+                                id: "1.6.5",
+                                slug: "1-6-5-modelo-de-despliegue",
+                                title: "1.6.5. Modelo de despliegue",
+                                component: <PlaceholderContent title="1.6.5. Modelo de despliegue" />
+                            },
+                            {
+                                id: "1.6.6",
+                                slug: "1-6-6-diseno-de-aplicaciones-web",
+                                title: "1.6.6. Diseño de aplicaciones web",
+                                component: <PlaceholderContent title="1.6.6. Diseño de aplicaciones web" />
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                slug: "unidad-2",
+                title: "Unidad II",
+                subtitle: "Desarrollo de APIs y servicios web",
+                banner: "/banners/unidad2.jpg",
+                subtext: "Principios, seguridad y buenas prácticas en la creación de APIs.",
+                objective: "Desarrolla un sistema de servicios web con base en los principios arquitectónicos REST y APIs RESTful para la comunicación entre sistemas heterogéneos.",
+                content: [
+                    {
+                        id: "2.1",
+                        slug: "2-1-servicios-web",
+                        title: "2.1. Servicios web",
+                        component: <PlaceholderContent title="2.1. Servicios web" />,
+                        subtopics: [
+                            {
+                                id: "2.1.1",
+                                slug: "2-1-1-soap",
+                                title: "2.1.1. SOAP",
+                                component: <PlaceholderContent title="2.1.1. SOAP" />
+                            },
+                            {
+                                id: "2.1.2",
+                                slug: "2-1-2-rest",
+                                title: "2.1.2. REST",
+                                component: <PlaceholderContent title="2.1.2. REST" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "2.2",
+                        slug: "2-2-intercambio-de-datos-entre-sistemas-heterogeneos",
+                        title: "2.2. Intercambio de datos entre sistemas heterogéneos",
+                        component: <PlaceholderContent title="2.2. Intercambio de datos entre sistemas heterogéneos" />,
+                        subtopics: [
+                            {
+                                id: "2.2.1",
+                                slug: "2-2-1-xml",
+                                title: "2.2.1. XML",
+                                component: <PlaceholderContent title="2.2.1. XML" />
+                            },
+                            {
+                                id: "2.2.2",
+                                slug: "2-2-2-json",
+                                title: "2.2.2. JSON",
+                                component: <PlaceholderContent title="2.2.2. JSON" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "2.3",
+                        slug: "2-3-principios-arquitectonicos-de-una-api-restful",
+                        title: "2.3. Principios arquitectónicos de una API RESTful",
+                        component: <PlaceholderContent title="2.3. Principios arquitectónicos de una API RESTful" />,
+                        subtopics: [
+                            {
+                                id: "2.3.1",
+                                slug: "2-3-1-uris",
+                                title: "2.3.1. URIs",
+                                component: <PlaceholderContent title="2.3.1. URIs" />
+                            },
+                            {
+                                id: "2.3.2",
+                                slug: "2-3-2-verbo-get-para-obtener-un-recurso",
+                                title: "2.3.2. Verbo GET para obtener un recurso",
+                                component: <PlaceholderContent title="2.3.2. Verbo GET para obtener un recurso" />
+                            },
+                            {
+                                id: "2.3.3",
+                                slug: "2-3-3-verbo-post-para-crear-un-recurso",
+                                title: "2.3.3. Verbo POST para crear un recurso",
+                                component: <PlaceholderContent title="2.3.3. Verbo POST para crear un recurso" />
+                            },
+                            {
+                                id: "2.3.4",
+                                slug: "2-3-4-verbo-put-para-actualizar-un-recurso",
+                                title: "2.3.4. Verbo PUT para actualizar un recurso",
+                                component: <PlaceholderContent title="2.3.4. Verbo PUT para actualizar un recurso" />
+                            },
+                            {
+                                id: "2.3.5",
+                                slug: "2-3-5-verbo-delete-para-eliminar-un-recurso",
+                                title: "2.3.5. Verbo DELETE para eliminar un recurso",
+                                component: <PlaceholderContent title="2.3.5. Verbo DELETE para eliminar un recurso" />
+                            },
+                            {
+                                id: "2.3.6",
+                                slug: "2-3-6-codigos-de-respuesta",
+                                title: "2.3.6. Códigos de respuesta",
+                                component: <PlaceholderContent title="2.3.6. Códigos de respuesta" />
+                            },
+                            {
+                                id: "2.3.7",
+                                slug: "2-3-7-endpoints",
+                                title: "2.3.7. Endpoints",
+                                component: <PlaceholderContent title="2.3.7. Endpoints" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "2.4",
+                        slug: "2-4-herramientas-de-depuracion",
+                        title: "2.4. Herramientas de depuración",
+                        component: <PlaceholderContent title="2.4. Herramientas de depuración" />,
+                        subtopics: [
+                            {
+                                id: "2.4.1",
+                                slug: "2-4-1-consumir-servicios-de-una-api-de-terceros",
+                                title: "2.4.1. Consumir servicios de una API de terceros",
+                                component: <PlaceholderContent title="2.4.1. Consumir servicios de una API de terceros" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "2.5",
+                        slug: "2-5-buenas-practicas-para-la-creacion-de-apis",
+                        title: "2.5. Buenas prácticas para la creación de API's",
+                        component: <PlaceholderContent title="2.5. Buenas prácticas para la creación de API's" />,
+                        subtopics: []
+                    },
+                    {
+                        id: "2.6",
+                        slug: "2-6-seguridad-de-servicios",
+                        title: "2.6. Seguridad de servicios",
+                        component: <PlaceholderContent title="2.6. Seguridad de servicios" />,
+                        subtopics: [
+                            {
+                                id: "2.6.1",
+                                slug: "2-6-1-seguridad-basada-en-sesiones",
+                                title: "2.6.1. Seguridad basada en Sesiones",
+                                component: <PlaceholderContent title="2.6.1. Seguridad basada en Sesiones" />
+                            },
+                            {
+                                id: "2.6.2",
+                                slug: "2-6-2-autenticacion-http-basica",
+                                title: "2.6.2. Autenticación HTTP Básica",
+                                component: <PlaceholderContent title="2.6.2. Autenticación HTTP Básica" />
+                            },
+                            {
+                                id: "2.6.3",
+                                slug: "2-6-3-autenticacion-implicita",
+                                title: "2.6.3. Autenticación Implícita",
+                                component: <PlaceholderContent title="2.6.3. Autenticación Implícita" />
+                            },
+                            {
+                                id: "2.6.4",
+                                slug: "2-6-4-seguridad-basada-en-certificados",
+                                title: "2.6.4. Seguridad basada en certificados",
+                                component: <PlaceholderContent title="2.6.4. Seguridad basada en certificados" />
+                            },
+                            {
+                                id: "2.6.5",
+                                slug: "2-6-5-autenticacion-basada-en-tokens",
+                                title: "2.6.5. Autenticación basada en tokens",
+                                component: <PlaceholderContent title="2.6.5. Autenticación basada en tokens" />
+                            },
+                            {
+                                id: "2.6.6",
+                                slug: "2-6-6-estandares-para-autorizacion-de-apis",
+                                title: "2.6.6. Estándares para autorización de APIs",
+                                component: <PlaceholderContent title="2.6.6. Estándares para autorización de APIs" />
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                slug: "unidad-3",
+                title: "Unidad III",
+                subtitle: "Desarrollo de aplicaciones del lado del servidor",
+                banner: "/banners/unidad3.jpg",
+                subtext: "Mapeo, tecnologías y servicios para el backend.",
+                objective: "Desarrolla aplicaciones del lado del servidor a partir del mapeo objeto-relacional, tecnologías y servicios APIs y endpoints para una gestión de datos eficiente.",
+                content: [
+                    {
+                        id: "3.1",
+                        slug: "3-1-mapeo-objeto-relacional",
+                        title: "3.1. Mapeo objeto relacional",
+                        component: <PlaceholderContent title="3.1. Mapeo objeto relacional" />,
+                        subtopics: [
+                            {
+                                id: "3.1.1",
+                                slug: "3-1-1-mapeo-de-entidades",
+                                title: "3.1.1. Mapeo de entidades",
+                                component: <PlaceholderContent title="3.1.1. Mapeo de entidades" />
+                            },
+                            {
+                                id: "3.1.2",
+                                slug: "3-1-2-mapeo-de-atributos-persistentes",
+                                title: "3.1.2. Mapeo de atributos persistentes",
+                                component: <PlaceholderContent title="3.1.2. Mapeo de atributos persistentes" />
+                            },
+                            {
+                                id: "3.1.3",
+                                slug: "3-1-3-mapeo-de-atributos-no-persistentes",
+                                title: "3.1.3. Mapeo de atributos no persistentes",
+                                component: <PlaceholderContent title="3.1.3. Mapeo de atributos no persistentes" />
+                            },
+                            {
+                                id: "3.1.4",
+                                slug: "3-1-4-mapeo-de-asociaciones",
+                                title: "3.1.4. Mapeo de asociaciones",
+                                component: <PlaceholderContent title="3.1.4. Mapeo de asociaciones" />
+                            },
+                            {
+                                id: "3.1.5",
+                                slug: "3-1-5-estrategias-de-recuperacion-de-asociaciones",
+                                title: "3.1.5. Estrategias de recuperación de asociaciones",
+                                component: <PlaceholderContent title="3.1.5. Estrategias de recuperación de asociaciones" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "3.2",
+                        slug: "3-2-tecnologias-para-la-generacion-de-servicios",
+                        title: "3.2. Tecnologías para la generación de servicios",
+                        component: <PlaceholderContent title="3.2. Tecnologías para la generación de servicios" />,
+                        subtopics: [
+                            {
+                                id: "3.2.1",
+                                slug: "3-2-1-modelo-de-madurez-de-richardson",
+                                title: "3.2.1. Modelo de madurez de Richardson",
+                                component: <PlaceholderContent title="3.2.1. Modelo de madurez de Richardson" />
+                            },
+                            {
+                                id: "3.2.2",
+                                slug: "3-2-2-metodos-del-protocolo-http",
+                                title: "3.2.2. Métodos del protocolo HTTP",
+                                component: <PlaceholderContent title="3.2.2. Métodos del protocolo HTTP" />
+                            },
+                            {
+                                id: "3.2.3",
+                                slug: "3-2-3-codigos-de-estado-del-protocolo-http",
+                                title: "3.2.3. Códigos de estado del protocolo HTTP",
+                                component: <PlaceholderContent title="3.2.3. Códigos de estado del protocolo HTTP" />
+                            },
+                            {
+                                id: "3.2.4",
+                                slug: "3-2-4-manejo-de-errores",
+                                title: "3.2.4. Manejo de errores",
+                                component: <PlaceholderContent title="3.2.4. Manejo de errores" />
+                            }
+                        ]
+                    },
+                    {
+                        id: "3.3",
+                        slug: "3-3-servicios-apis-y-endpoints",
+                        title: "3.3. Servicios, APIS y endpoints",
+                        component: <PlaceholderContent title="3.3. Servicios, APIS y endpoints" />,
+                        subtopics: [
+                            {
+                                id: "3.3.1",
+                                slug: "3-3-1-generacion-y-publicacion",
+                                title: "3.3.1. Generación y publicación",
+                                component: <PlaceholderContent title="3.3.1. Generación y publicación" />
+                            },
+                            {
+                                id: "3.3.2",
+                                slug: "3-3-2-control-de-acceso-http-cors",
+                                title: "3.3.2. Control de acceso HTTP (CORS)",
+                                component: <PlaceholderContent title="3.3.2. Control de acceso HTTP (CORS)" />
+                            },
+                            {
+                                id: "3.3.3",
+                                slug: "3-3-3-documentacion",
+                                title: "3.3.3. Documentación",
+                                component: <PlaceholderContent title="3.3.3. Documentación" />
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
 };
