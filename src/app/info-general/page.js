@@ -95,7 +95,7 @@ export default async function InfoGeneralPage({ searchParams }) {
 
     const breadcrumbItems = [
         { name: 'Cursos', href: '/' },
-        { name: 'Polilibro', href: '/' },
+        { name: 'Polilibros', href: '/' },
         { name: courseData.title, href: '/' },
         { name: info.title, href: `/${info.slug}` }
     ];
