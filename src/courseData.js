@@ -2,8 +2,9 @@ import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBu
 import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
-import * as ContentUnit3 from "./components/ContentUnit3";
 import * as ContentUnit1 from "./components/ContentUnit1";
+import * as ContentUnit2 from "./components/ContentUnit2";
+import * as ContentUnit3 from "./components/ContentUnit3";
 import * as TableContentInfoGen from "./components/TableToolsInfoGen";
 
 const FeatureIcon = ({ icon }) => (
@@ -396,155 +397,155 @@ export const courseData = {
                     {
                         id: "2.1",
                         slug: "2-1-servicios-web",
-                        title: "2.1. Servicios web",
-                        component: <PlaceholderContent title="2.1. Servicios web" />,
+                        title: "2.1. Servicios Web",
+                        component: <ContentUnit2.Content_2_1 />,
                         subtopics: [
                             {
                                 id: "2.1.1",
                                 slug: "2-1-1-soap",
-                                title: "2.1.1. SOAP",
-                                component: <PlaceholderContent title="2.1.1. SOAP" />
+                                title: "2.1.1. SOAP (Simple Object Access Protocol)",
+                                component: <ContentUnit2.Content_2_1_1 />
                             },
                             {
                                 id: "2.1.2",
                                 slug: "2-1-2-rest",
-                                title: "2.1.2. REST",
-                                component: <PlaceholderContent title="2.1.2. REST" />
+                                title: "2.1.2. REST (Representational State Transfer)",
+                                component: <ContentUnit2.Content_2_1_2 />
                             }
                         ]
                     },
                     {
                         id: "2.2",
-                        slug: "2-2-intercambio-de-datos-entre-sistemas-heterogeneos",
+                        slug: "2-2-intercambio-datos",
                         title: "2.2. Intercambio de datos entre sistemas heterogéneos",
-                        component: <PlaceholderContent title="2.2. Intercambio de datos entre sistemas heterogéneos" />,
+                        component: <ContentUnit2.Content_2_2 />,
                         subtopics: [
                             {
                                 id: "2.2.1",
                                 slug: "2-2-1-xml",
-                                title: "2.2.1. XML",
-                                component: <PlaceholderContent title="2.2.1. XML" />
+                                title: "2.2.1. XML (eXtensible Markup Language)",
+                                component: <ContentUnit2.Content_2_2_1 />
                             },
                             {
                                 id: "2.2.2",
                                 slug: "2-2-2-json",
-                                title: "2.2.2. JSON",
-                                component: <PlaceholderContent title="2.2.2. JSON" />
+                                title: "2.2.2. JSON (JavaScript Object Notation)",
+                                component: <ContentUnit2.Content_2_2_2 />
                             }
                         ]
                     },
                     {
                         id: "2.3",
-                        slug: "2-3-principios-arquitectonicos-de-una-api-restful",
+                        slug: "2-3-principios-api-restful",
                         title: "2.3. Principios arquitectónicos de una API RESTful",
-                        component: <PlaceholderContent title="2.3. Principios arquitectónicos de una API RESTful" />,
+                        component: <ContentUnit2.Content_2_3 />,
                         subtopics: [
                             {
                                 id: "2.3.1",
                                 slug: "2-3-1-uris",
                                 title: "2.3.1. URIs",
-                                component: <PlaceholderContent title="2.3.1. URIs" />
+                                component: <ContentUnit2.Content_2_3_1 />
                             },
                             {
                                 id: "2.3.2",
-                                slug: "2-3-2-verbo-get-para-obtener-un-recurso",
+                                slug: "2-3-2-verbo-get",
                                 title: "2.3.2. Verbo GET para obtener un recurso",
-                                component: <PlaceholderContent title="2.3.2. Verbo GET para obtener un recurso" />
+                                component: <ContentUnit2.Content_2_3_2 />
                             },
                             {
                                 id: "2.3.3",
-                                slug: "2-3-3-verbo-post-para-crear-un-recurso",
+                                slug: "2-3-3-verbo-post",
                                 title: "2.3.3. Verbo POST para crear un recurso",
-                                component: <PlaceholderContent title="2.3.3. Verbo POST para crear un recurso" />
+                                component: <ContentUnit2.Content_2_3_3 />
                             },
                             {
                                 id: "2.3.4",
-                                slug: "2-3-4-verbo-put-para-actualizar-un-recurso",
+                                slug: "2-3-4-verbo-put",
                                 title: "2.3.4. Verbo PUT para actualizar un recurso",
-                                component: <PlaceholderContent title="2.3.4. Verbo PUT para actualizar un recurso" />
+                                component: <ContentUnit2.Content_2_3_4 />
                             },
                             {
                                 id: "2.3.5",
-                                slug: "2-3-5-verbo-delete-para-eliminar-un-recurso",
+                                slug: "2-3-5-verbo-delete",
                                 title: "2.3.5. Verbo DELETE para eliminar un recurso",
-                                component: <PlaceholderContent title="2.3.5. Verbo DELETE para eliminar un recurso" />
+                                component: <ContentUnit2.Content_2_3_5 />
                             },
                             {
                                 id: "2.3.6",
-                                slug: "2-3-6-codigos-de-respuesta",
+                                slug: "2-3-6-codigos-respuesta",
                                 title: "2.3.6. Códigos de respuesta",
-                                component: <PlaceholderContent title="2.3.6. Códigos de respuesta" />
+                                component: <ContentUnit2.Content_2_3_6 />
                             },
                             {
                                 id: "2.3.7",
                                 slug: "2-3-7-endpoints",
                                 title: "2.3.7. Endpoints",
-                                component: <PlaceholderContent title="2.3.7. Endpoints" />
+                                component: <ContentUnit2.Content_2_3_7 />
                             }
                         ]
                     },
                     {
                         id: "2.4",
-                        slug: "2-4-herramientas-de-depuracion",
+                        slug: "2-4-herramientas-depuracion",
                         title: "2.4. Herramientas de depuración",
-                        component: <PlaceholderContent title="2.4. Herramientas de depuración" />,
+                        component: <ContentUnit2.Content_2_4 />,
                         subtopics: [
                             {
                                 id: "2.4.1",
-                                slug: "2-4-1-consumir-servicios-de-una-api-de-terceros",
+                                slug: "2-4-1-consumir-api-terceros",
                                 title: "2.4.1. Consumir servicios de una API de terceros",
-                                component: <PlaceholderContent title="2.4.1. Consumir servicios de una API de terceros" />
+                                component: <ContentUnit2.Content_2_4_1 />
                             }
                         ]
                     },
                     {
                         id: "2.5",
-                        slug: "2-5-buenas-practicas-para-la-creacion-de-apis",
+                        slug: "2-5-buenas-practicas",
                         title: "2.5. Buenas prácticas para la creación de API's",
-                        component: <PlaceholderContent title="2.5. Buenas prácticas para la creación de API's" />,
+                        component: <ContentUnit2.Content_2_5 />,
                         subtopics: []
                     },
                     {
                         id: "2.6",
-                        slug: "2-6-seguridad-de-servicios",
+                        slug: "2-6-seguridad-servicios",
                         title: "2.6. Seguridad de servicios",
-                        component: <PlaceholderContent title="2.6. Seguridad de servicios" />,
+                        component: <ContentUnit2.Content_2_6 />,
                         subtopics: [
                             {
                                 id: "2.6.1",
-                                slug: "2-6-1-seguridad-basada-en-sesiones",
+                                slug: "2-6-1-seguridad-sesiones",
                                 title: "2.6.1. Seguridad basada en Sesiones",
-                                component: <PlaceholderContent title="2.6.1. Seguridad basada en Sesiones" />
+                                component: <ContentUnit2.Content_2_6_1 />
                             },
                             {
                                 id: "2.6.2",
-                                slug: "2-6-2-autenticacion-http-basica",
+                                slug: "2-6-2-autenticacion-basica",
                                 title: "2.6.2. Autenticación HTTP Básica",
-                                component: <PlaceholderContent title="2.6.2. Autenticación HTTP Básica" />
+                                component: <ContentUnit2.Content_2_6_2 />
                             },
                             {
                                 id: "2.6.3",
                                 slug: "2-6-3-autenticacion-implicita",
                                 title: "2.6.3. Autenticación Implícita",
-                                component: <PlaceholderContent title="2.6.3. Autenticación Implícita" />
+                                component: <ContentUnit2.Content_2_6_3 />
                             },
                             {
                                 id: "2.6.4",
-                                slug: "2-6-4-seguridad-basada-en-certificados",
+                                slug: "2-6-4-seguridad-certificados",
                                 title: "2.6.4. Seguridad basada en certificados",
-                                component: <PlaceholderContent title="2.6.4. Seguridad basada en certificados" />
+                                component: <ContentUnit2.Content_2_6_4 />
                             },
                             {
                                 id: "2.6.5",
-                                slug: "2-6-5-autenticacion-basada-en-tokens",
+                                slug: "2-6-5-autenticacion-tokens",
                                 title: "2.6.5. Autenticación basada en tokens",
-                                component: <PlaceholderContent title="2.6.5. Autenticación basada en tokens" />
+                                component: <ContentUnit2.Content_2_6_5 />
                             },
                             {
                                 id: "2.6.6",
-                                slug: "2-6-6-estandares-para-autorizacion-de-apis",
+                                slug: "2-6-6-estandares-autorizacion",
                                 title: "2.6.6. Estándares para autorización de APIs",
-                                component: <PlaceholderContent title="2.6.6. Estándares para autorización de APIs" />
+                                component: <ContentUnit2.Content_2_6_6 />
                             }
                         ]
                     }
