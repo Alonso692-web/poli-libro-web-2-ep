@@ -35,18 +35,29 @@ export default async function TopicDetailPage({ params }) {
     const { topicSlug } = params;
     const unit = courseData.units.find(u => u.slug === 'unidad-3');
 
-    // El resto del código no necesita cambiar
     let currentTopic = null;
-    for (const topic of unit.content) {
-        if (topic.slug === topicSlug) {
-            currentTopic = topic;
-            break;
-        }
-        if (topic.subtopics) {
-            const foundSubtopic = topic.subtopics.find(sub => sub.slug === topicSlug);
-            if (foundSubtopic) {
-                currentTopic = foundSubtopic;
+    if (unit) {
+        for (const topic of unit.content) {
+            // 1. Buscar en temas principales
+            if (topic.slug === topicSlug) {
+                currentTopic = topic;
                 break;
+            }
+            // 2. Buscar en subtemas
+            if (topic.subtopics) {
+                const foundSubtopic = topic.subtopics.find(sub => sub.slug === topicSlug);
+                if (foundSubtopic) {
+                    currentTopic = foundSubtopic;
+                    break;
+                }
+            }
+            // 3. Buscar en actividades
+            if (topic.activities) {
+                const foundActivity = topic.activities.find(act => act.slug === topicSlug);
+                if (foundActivity) {
+                    currentTopic = foundActivity;
+                    break;
+                }
             }
         }
     }

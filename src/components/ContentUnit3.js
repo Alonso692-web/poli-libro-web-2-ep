@@ -1,3 +1,4 @@
+import { FaInbox, FaFilePdf } from 'react-icons/fa';
 import Image from "next/image";
 
 export const Content_3_1 = () => (
@@ -338,3 +339,179 @@ export const References_U3 = () => (
         </ul>
     </div>
 );
+
+export const ActivityLayout = ({ data }) => {
+    return (
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-sm">
+            {/* Título principal de la actividad */}
+            <h1 className="text-2xl font-bold text-gray-800 mb-6">{data.fullTitle}</h1>
+
+            {/* Banner "Buzón de Tareas" */}
+            <div className="flex items-center gap-4 text-purple-700 font-semibold mb-8 p-4 bg-purple-50 rounded-lg">
+                <FaInbox className="text-4xl" />
+                <h2 className="text-3xl">Buzón de tareas</h2>
+            </div>
+
+            {/* Tabla de Características */}
+            <div className="mb-8">
+                <h3 className="w-full bg-purple-600 text-white font-bold p-3 text-center rounded-t-lg">Características de la actividad</h3>
+                <div className="grid grid-cols-2 md:grid-cols-7 text-center border border-gray-300">
+                    {/* Headers */}
+                    <div className="font-semibold bg-purple-100 p-2 border-b">Individual/Grupal</div>
+                    <div className="font-semibold bg-purple-100 p-2 border-b">Tiempo aprox.</div>
+                    <div className="font-semibold bg-purple-100 p-2 border-b">Aula / A distancia</div>
+                    <div className="font-semibold bg-purple-100 p-2 border-b">Evidencia</div>
+                    <div className="font-semibold bg-purple-100 p-2 border-b col-span-2">Entrega / Ubicación</div>
+                    <div className="font-semibold bg-purple-100 p-2 border-b">Valor</div>
+
+                    {/* Datos */}
+                    <div className="p-2 border-b">{data.type}</div>
+                    <div className="p-2 border-b">{data.time}</div>
+                    <div className="p-2 border-b">{data.location}</div>
+                    <div className="p-2 border-b">{data.evidence}</div>
+                    <div className="p-2 border-b col-span-2">{data.delivery}</div>
+                    <div className="p-2 border-b">{data.value}%</div>
+                </div>
+            </div>
+
+            {/* Sección de Objetivo */}
+            <div className="mb-8">
+                <h3 className="w-full bg-purple-600 text-white font-bold p-3 text-center rounded-t-lg">Objetivo de la actividad</h3>
+                <div className="border border-gray-300 p-4 rounded-b-lg">
+                    <p>{data.objective}</p>
+                </div>
+            </div>
+
+            {/* Sección de Instrucciones */}
+            <div>
+                <h3 className="w-full bg-purple-600 text-white font-bold p-3 text-center rounded-t-lg">Instrucciones</h3>
+                <div className="border border-gray-300 p-4 rounded-b-lg">
+                    <ol className="list-decimal list-inside space-y-3">
+                        {data.instructionsPdf && (
+                            <div className="mb-6 text-center">
+                                <a
+                                    href={data.instructionsPdf}
+                                    download  // Este atributo le dice al navegador que descargue el archivo
+                                    target="_blank" // Abre el PDF en una nueva pestaña si el navegador no lo descarga directamente
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition-colors"
+                                >
+                                    <FaFilePdf />
+                                    Descargar Instrucciones en PDF
+                                </a>
+                            </div>
+                        )}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export const Activity_U3_ORM = () => {
+    const activityData = {
+        fullTitle: "Actividad 1: Modelado y mapeo ORM con JPA/Hibernate",
+        type: 'Individual', time: '3.0 hrs', location: 'A distancia',
+        evidence: 'Diagrama y Proyecto Spring Boot',
+        delivery: 'Buzón de Tareas', value: 10,
+        objective: 'Crear las entidades Java que representen dos tablas relacionadas (por ejemplo, Usuario y Rol).',
+        instructions: [
+            "Definir las clases anotadas con @Entity, incluyendo atributos persistentes (@Column) y no persistentes (@Transient).",
+            "Mapear una relación @OneToMany y su estrategia de carga (FetchType.LAZY vs. FetchType.EAGER).",
+            "Probar en phpMyAdmin que el esquema generado coincide con lo esperado.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad1_Modelado_ORM.pdf',
+    };
+    return <ActivityLayout data={activityData} />;
+};
+
+// Actividad 2: CRUD REST
+export const Activity_U3_CRUD = () => {
+    const activityData = {
+        fullTitle: "Actividad 2: Implementación de un CRUD REST básico",
+        type: 'Individual', time: '4.0 hrs', location: 'A distancia',
+        evidence: 'Colección de Postman',
+        delivery: 'Buzón de Tareas', value: 15,
+        objective: 'Desarrollar un API REST para gestionar los Usuario creados.',
+        instructions: [
+            "Crear un @RestController con endpoints GET, POST, PUT y DELETE.",
+            "Usar Spring Data JPA para el repositorio y conectar con la base MySQL.",
+            "Verificar las operaciones desde Postman o Swagger UI.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad2_CRUD_REST.pdf',
+    };
+    return <ActivityLayout data={activityData} />;
+};
+
+// Actividad 3: Manejo de Errores
+export const Activity_U3_Errors = () => {
+    const activityData = {
+        fullTitle: "Actividad 3: Manejo de errores y códigos HTTP",
+        type: 'Individual', time: '2.5 hrs', location: 'A distancia',
+        evidence: 'Ejemplos de peticiones erróneas',
+        delivery: 'Buzón de Tareas', value: 10,
+        objective: 'Implementar un manejador global de excepciones que devuelva respuestas JSON con código y mensaje.',
+        instructions: [
+            "Crear una clase @ControllerAdvice que capture EntityNotFoundException, MethodArgumentNotValidException, etc.",
+            "Mapear a los códigos HTTP adecuados (404, 400, 500).",
+            "Diseñar un DTO de error con campos timestamp, status, error y message.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad3_Manejo_Errores.pdf',
+    };
+    return <ActivityLayout data={activityData} />;
+};
+
+// Actividad 4: Seguridad JWT
+export const Activity_U3_JWT = () => {
+    const activityData = {
+        fullTitle: "Actividad 4: Seguridad de la API con JWT",
+        type: 'Individual', time: '4.0 hrs', location: 'A distancia',
+        evidence: 'Capturas de pantalla (403)',
+        delivery: 'Buzón de Tareas', value: 15,
+        objective: 'Proteger los endpoints CRUD mediante autenticación basada en tokens JWT.',
+        instructions: [
+            "Configurar Spring Security y un endpoint /login que emita el token.",
+            "Implementar un filtro que valide el JWT en cada petición.",
+            "Asignar roles (ROLE_USER, ROLE_ADMIN) y restringir acceso a ciertos endpoints.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad4_Seguridad_JWT.pdf',
+    };
+    return <ActivityLayout data={activityData} />;
+};
+
+// Actividad 5: Swagger
+export const Activity_U3_Swagger = () => {
+    const activityData = {
+        fullTitle: "Actividad 5: Documentación automática con Swagger/OpenAPI",
+        type: 'Individual', time: '1.5 hrs', location: 'A distancia',
+        evidence: 'Captura de pantalla de Swagger UI',
+        delivery: 'Buzón de Tareas', value: 5,
+        objective: 'Generar documentación navegable de todos los endpoints.',
+        instructions: [
+            "Añadir la dependencia springdoc-openapi-ui.",
+            "Configurar la información de la API (title, version, contact).",
+            "Verificar la documentación en http://localhost:8080/swagger-ui.html.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad5_Swagger_OpenAPI.pdf',
+
+    };
+    return <ActivityLayout data={activityData} />;
+};
+
+// Actividad 6: CORS
+export const Activity_U3_CORS = () => {
+    const activityData = {
+        fullTitle: "Actividad 6: Configuración de CORS y despliegue local",
+        type: 'Individual', time: '2.0 hrs', location: 'A distancia',
+        evidence: 'Demo de cliente web y manual',
+        delivery: 'Buzón de Tareas', value: 5,
+        objective: 'Habilitar CORS para permitir llamadas desde un cliente web externo.',
+        instructions: [
+            "Configurar @CrossOrigin a nivel de controller o globalmente con WebMvcConfigurer.",
+            "Probar desde una sencilla página HTML/JavaScript consumiendo el API.",
+            "Documentar el proceso de despliegue en local (JAR ejecutable) y capturas en phpMyAdmin.",
+        ],
+        instructionsPdf: '/documents/unidad3/Actividad6_CORS_Despliegue.pdf',
+    };
+    return <ActivityLayout data={activityData} />;
+};

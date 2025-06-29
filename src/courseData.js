@@ -594,6 +594,9 @@ export const courseData = {
                                 title: "3.1.5. Estrategias de recuperación de asociaciones",
                                 component: <ContentUnit3.Content_3_1_5 />
                             }
+                        ],
+                        activities: [
+                            { id: "act-3-1", slug: "actividad-modelado-orm", title: "Actividad 1: Modelado y mapeo ORM", component: <ContentUnit3.Activity_U3_ORM /> }
                         ]
                     },
                     {
@@ -601,31 +604,9 @@ export const courseData = {
                         slug: "3-2-tecnologias-para-la-generacion-de-servicios",
                         title: "3.2. Tecnologías para la generación de servicios",
                         component: <ContentUnit3.Content_3_2 />,
-                        subtopics: [
-                            {
-                                id: "3.2.1",
-                                slug: "3-2-1-modelo-de-madurez-de-richardson",
-                                title: "3.2.1. Modelo de madurez de Richardson",
-                                component: <ContentUnit3.Content_3_2_1 />
-                            },
-                            {
-                                id: "3.2.2",
-                                slug: "3-2-2-metodos-del-protocolo-http",
-                                title: "3.2.2. Métodos del protocolo HTTP",
-                                component: <ContentUnit3.Content_3_2_2 />
-                            },
-                            {
-                                id: "3.2.3",
-                                slug: "3-2-3-codigos-de-estado-del-protocolo-http",
-                                title: "3.2.3. Códigos de estado del protocolo HTTP",
-                                component: <ContentUnit3.Content_3_2_3 />
-                            },
-                            {
-                                id: "3.2.4",
-                                slug: "3-2-4-manejo-de-errores",
-                                title: "3.2.4. Manejo de errores",
-                                component: <ContentUnit3.Content_3_2_4 />
-                            }
+                        subtopics: [ /* ... subtemas 3.2 ... */],
+                        activities: [
+                            { id: "act-3-2", slug: "actividad-manejo-errores", title: "Actividad 3: Manejo de errores y códigos HTTP", component: <ContentUnit3.Activity_U3_Errors /> }
                         ]
                     },
                     {
@@ -652,6 +633,12 @@ export const courseData = {
                                 title: "3.3.3. Documentación",
                                 component: <ContentUnit3.Content_3_3_3 />
                             }
+                        ],
+                        activities: [
+                            { id: "act-3-3", slug: "actividad-crud-rest", title: "Actividad 2: Implementación de un CRUD REST básico", component: <ContentUnit3.Activity_U3_CRUD /> },
+                            { id: "act-3-4", slug: "actividad-seguridad-jwt", title: "Actividad 4: Seguridad de la API con JWT", component: <ContentUnit3.Activity_U3_JWT /> },
+                            { id: "act-3-5", slug: "actividad-swagger-openapi", title: "Actividad 5: Documentación automática con Swagger/OpenAPI", component: <ContentUnit3.Activity_U3_Swagger /> },
+                            { id: "act-3-6", slug: "actividad-cors-despliegue", title: "Actividad 6: Configuración de CORS y despliegue local", component: <ContentUnit3.Activity_U3_CORS /> }
                         ]
                     },
                     {

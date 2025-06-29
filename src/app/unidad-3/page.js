@@ -52,10 +52,12 @@ export default function Unidad1Page() {
                     <div className="space-y-6">
                         {unit.content.map((topic) => (
                             <div key={topic.id}>
+                                {/* Título principal del tema (sin cambios) */}
                                 <div className="flex items-center gap-4 mb-3">
                                     <div className="bg-purple-600 text-white p-3 rounded-md text-sm font-bold">{topic.id} Tema</div>
                                     <h3 className="text-2xl font-light text-gray-800">{topic.title.replace(`${topic.id}. `, "")}</h3>
                                 </div>
+                                {/* Lista de subtemas (sin cambios) */}
                                 <ul className="space-y-3 ml-8">
                                     <li className="flex items-center gap-3">
                                         <FaBookOpen className="text-blue-500 text-lg" />
@@ -63,8 +65,16 @@ export default function Unidad1Page() {
                                     </li>
                                     {topic.subtopics?.map((subtopic) => (
                                         <li key={subtopic.id} className="flex items-center gap-3">
-                                            <FaTasks className="text-green-500 text-lg" />
+                                            <FaBookOpen className="text-blue-500 text-lg" />
                                             <Link href={`/${unit.slug}/${subtopic.slug}`} className="text-blue-600 hover:underline">{subtopic.title}</Link>
+                                        </li>
+                                    ))}
+
+                                    {/* --- ¡NUEVO BLOQUE PARA RENDERIZAR ACTIVIDADES! --- */}
+                                    {topic.activities?.map((activity) => (
+                                        <li key={activity.id} className="flex items-center gap-3 mt-2">
+                                            <FaTasks className="text-orange-500 text-lg" /> {/* Icono diferente para actividades */}
+                                            <Link href={`/${unit.slug}/${activity.slug}`} className="text-orange-600 hover:underline font-semibold">{activity.title}</Link>
                                         </li>
                                     ))}
                                 </ul>
