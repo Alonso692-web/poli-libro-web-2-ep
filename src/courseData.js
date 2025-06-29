@@ -3,6 +3,7 @@ import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
 import * as ContentUnit3 from "./components/ContentUnit3";
+import * as ContentUnit1 from "./components/ContentUnit1";
 import * as TableContentInfoGen from "./components/TableToolsInfoGen";
 
 const FeatureIcon = ({ icon }) => (
@@ -230,20 +231,20 @@ export const courseData = {
                         id: "1.1",
                         slug: "1-1-principios-comunes-para-las-arquitecturas",
                         title: "1.1. Principios comunes para las arquitecturas",
-                        component: <PlaceholderContent title="1.1. Principios comunes para las arquitecturas" />,
+                        component: <ContentUnit1.Content_1_1 />,
                         subtopics: []
                     },
                     {
                         id: "1.2",
                         slug: "1-2-arquitectura-monolitica",
                         title: "1.2. Arquitectura monolítica",
-                        component: <PlaceholderContent title="1.2. Arquitectura monolítica" />,
+                        component: <ContentUnit1.Content_1_2 />,
                         subtopics: [
                             {
                                 id: "1.2.1",
                                 slug: "1-2-1-contenedores",
                                 title: "1.2.1. Contenedores",
-                                component: <PlaceholderContent title="1.2.1. Contenedores" />
+                                component: <ContentUnit1.Content_1_2_1 />
                             }
                         ]
                     },
@@ -251,25 +252,25 @@ export const courseData = {
                         id: "1.3",
                         slug: "1-3-arquitectura-tradicional-de-n-capas",
                         title: "1.3. Arquitectura tradicional de n-capas",
-                        component: <PlaceholderContent title="1.3. Arquitectura tradicional de n-capas" />,
+                        component: <ContentUnit1.Content_1_3 />,
                         subtopics: [
                             {
                                 id: "1.3.1",
                                 slug: "1-3-1-capa-de-acceso-a-datos",
                                 title: "1.3.1. Capa de acceso a datos",
-                                component: <PlaceholderContent title="1.3.1. Capa de acceso a datos" />
+                                component: <ContentUnit1.Content_1_3_1 />
                             },
                             {
                                 id: "1.3.2",
                                 slug: "1-3-2-capa-de-logica-de-negocios",
                                 title: "1.3.2. Capa de lógica de negocios",
-                                component: <PlaceholderContent title="1.3.2. Capa de lógica de negocios" />
+                                component: <ContentUnit1.Content_1_3_2 />
                             },
                             {
                                 id: "1.3.3",
                                 slug: "1-3-3-interfaz-de-usuario",
                                 title: "1.3.3. Interfaz de usuario",
-                                component: <PlaceholderContent title="1.3.3. Interfaz de usuario" />
+                                component: <ContentUnit1.Content_1_3_3 />
                             }
                         ]
                     },
@@ -277,31 +278,31 @@ export const courseData = {
                         id: "1.4",
                         slug: "1-4-arquitectura-de-cebolla-arquitectura-limpia",
                         title: "1.4. Arquitectura de cebolla (arquitectura limpia)",
-                        component: <PlaceholderContent title="1.4. Arquitectura de cebolla (arquitectura limpia)" />,
+                        component: <ContentUnit1.Content_1_4 />,
                         subtopics: [
                             {
                                 id: "1.4.1",
                                 slug: "1-4-1-modelo-del-dominio",
                                 title: "1.4.1. Modelo del dominio",
-                                component: <PlaceholderContent title="1.4.1. Modelo del dominio" />
+                                component: <ContentUnit1.Content_1_4_1 />
                             },
                             {
                                 id: "1.4.2",
                                 slug: "1-4-2-interfaz-de-usuario",
                                 title: "1.4.2. Interfaz de usuario",
-                                component: <PlaceholderContent title="1.4.2. Interfaz de usuario" />
+                                component: <ContentUnit1.Content_1_4_2 />
                             },
                             {
                                 id: "1.4.3",
                                 slug: "1-4-3-infraestructura",
                                 title: "1.4.3. Infraestructura",
-                                component: <PlaceholderContent title="1.4.3. Infraestructura" />
+                                component: <ContentUnit1.Content_1_4_3 />
                             },
                             {
                                 id: "1.4.4",
                                 slug: "1-4-4-pruebas",
                                 title: "1.4.4. Pruebas",
-                                component: <PlaceholderContent title="1.4.4. Pruebas" />
+                                component: <ContentUnit1.Content_1_4_4 />
                             }
                         ]
                     },
@@ -309,31 +310,31 @@ export const courseData = {
                         id: "1.5",
                         slug: "1-5-arquitectura-hexagonal",
                         title: "1.5. Arquitectura hexagonal",
-                        component: <PlaceholderContent title="1.5. Arquitectura hexagonal" />,
+                        component: <ContentUnit1.Content_1_5 />,
                         subtopics: [
                             {
                                 id: "1.5.1",
                                 slug: "1-5-1-dominio-de-la-aplicacion",
                                 title: "1.5.1. Dominio de la aplicación",
-                                component: <PlaceholderContent title="1.5.1. Dominio de la aplicación" />
+                                component: <ContentUnit1.Content_1_5_1 />
                             },
                             {
                                 id: "1.5.2",
                                 slug: "1-5-2-puertos",
                                 title: "1.5.2. Puertos",
-                                component: <PlaceholderContent title="1.5.2. Puertos" />
+                                component: <ContentUnit1.Content_1_5_2 />
                             },
                             {
                                 id: "1.5.3",
                                 slug: "1-5-3-capa-de-servicios",
                                 title: "1.5.3. Capa de servicios",
-                                component: <PlaceholderContent title="1.5.3. Capa de servicios" />
+                                component: <ContentUnit1.Content_1_5_3 />
                             },
                             {
                                 id: "1.5.4",
                                 slug: "1-5-4-adaptadores",
                                 title: "1.5.4. Adaptadores",
-                                component: <PlaceholderContent title="1.5.4. Adaptadores" />
+                                component: <ContentUnit1.Content_1_5_4 />
                             }
                         ]
                     },
@@ -341,43 +342,43 @@ export const courseData = {
                         id: "1.6",
                         slug: "1-6-arquitectura-de-microservicios",
                         title: "1.6. Arquitectura de microservicios",
-                        component: <PlaceholderContent title="1.6. Arquitectura de microservicios" />,
+                        component: <ContentUnit1.Content_1_6 />,
                         subtopics: [
                             {
                                 id: "1.6.1",
                                 slug: "1-6-1-fundamentos-de-microservicios",
                                 title: "1.6.1. Fundamentos de microservicios",
-                                component: <PlaceholderContent title="1.6.1. Fundamentos de microservicios" />
+                                component: <ContentUnit1.Content_1_6_1 />
                             },
                             {
                                 id: "1.6.2",
                                 slug: "1-6-2-arquitectura-del-dominio",
                                 title: "1.6.2. Arquitectura del dominio",
-                                component: <PlaceholderContent title="1.6.2. Arquitectura del dominio" />
+                                component: <ContentUnit1.Content_1_6_2 />
                             },
                             {
                                 id: "1.6.3",
                                 slug: "1-6-3-modelo-de-referencia",
                                 title: "1.6.3. Modelo de referencia",
-                                component: <PlaceholderContent title="1.6.3. Modelo de referencia" />
+                                component: <ContentUnit1.Content_1_6_3 />
                             },
                             {
                                 id: "1.6.4",
                                 slug: "1-6-4-modelo-de-implementacion",
                                 title: "1.6.4. Modelo de implementación",
-                                component: <PlaceholderContent title="1.6.4. Modelo de implementación" />
+                                component: <ContentUnit1.Content_1_6_4 />
                             },
                             {
                                 id: "1.6.5",
                                 slug: "1-6-5-modelo-de-despliegue",
                                 title: "1.6.5. Modelo de despliegue",
-                                component: <PlaceholderContent title="1.6.5. Modelo de despliegue" />
+                                component: <ContentUnit1.Content_1_6_5 />
                             },
                             {
                                 id: "1.6.6",
                                 slug: "1-6-6-diseno-de-aplicaciones-web",
                                 title: "1.6.6. Diseño de aplicaciones web",
-                                component: <PlaceholderContent title="1.6.6. Diseño de aplicaciones web" />
+                                component: <ContentUnit1.Content_1_6_6 />
                             }
                         ]
                     }
