@@ -1,9 +1,16 @@
+'use client';
+
 import Sidebar from '@/components/Sidebar';
 import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import Image from 'next/image';
 import { courseData } from '@/courseData';
 import { FaCodeBranch, FaChevronRight, FaPlay, FaBookOpen, FaTasks } from 'react-icons/fa';
+
+const handlePlayVideo = () => {
+    const urlVideo = 'https://youtu.be/u2Ms34GE14U?si=GAa13Z1vOTN6Pesm'; // Reemplaza ID_DE_TU_VIDEO con el ID real del video
+    window.open(urlVideo, '_blank', 'noopener,noreferrer');
+};
 
 export default function Unidad1Page() {
     const unit = courseData.units.find(u => u.slug === 'unidad-2');
@@ -35,7 +42,7 @@ export default function Unidad1Page() {
                     </div>
                     <div className="w-full md:w-1/3 h-48 bg-black rounded-lg flex items-center justify-center">
                         <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center opacity-70 cursor-pointer hover:opacity-90 transition-opacity">
-                            <FaPlay className="text-white text-2xl ml-1" />
+                            <FaPlay onClick={handlePlayVideo} className="text-white text-2xl ml-1" />
                         </div>
                     </div>
                 </div>
