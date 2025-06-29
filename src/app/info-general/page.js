@@ -5,9 +5,6 @@ import { courseData } from '@/courseData';
 import InfoTabs from '@/components/InfoTabs';
 import { FaListAlt, FaInfoCircle, FaTasks } from 'react-icons/fa';
 
-// --- CONTENIDO ESPECÍFICO PARA CADA PÁGINA ---
-// Estos son Server Components, no necesitan "use client".
-
 const FeatureIcon = ({ icon }) => (
     <div className="flex justify-center mb-6">
         <div className="relative w-32 h-32 flex items-center justify-center">

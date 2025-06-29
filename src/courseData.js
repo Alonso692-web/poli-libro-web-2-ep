@@ -5,7 +5,7 @@ import Image from 'next/image';
 import * as ContentUnit1 from "./components/ContentUnit1";
 import * as ContentUnit2 from "./components/ContentUnit2";
 import * as ContentUnit3 from "./components/ContentUnit3";
-import * as TableContentInfoGen from "./components/TableToolsInfoGen";
+import { TechToolsContent } from "./components/TechComponent";
 
 const FeatureIcon = ({ icon }) => (
     <div className="flex justify-center mb-6">
@@ -69,7 +69,7 @@ export const courseData = {
                 id: 'tecnologia',
                 icon: <FaCog />,
                 title: "Complementos tecnológicos",
-                content: <TableContentInfoGen.TechToolsContent />
+                content: <TechToolsContent />
             },
             {
                 id: 'concepto',
@@ -88,11 +88,11 @@ export const courseData = {
                         <h4 className="text-xl font-bold text-purple-700">A cerca del polilibro</h4>
                         <ul className="list-none p-0 m-0">
                             <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Este material did&aacute;ctico est&aacute; estructurado para abordar de manera progresiva los conceptos esenciales del desarrollo web tanto en el cliente como en el servidor.</li>
-                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Se iniciar&aacute; con una introducci&oacute;n a la arquitectura cliente-servidor, explicando los protocolos HTTP y WebSockets, fundamentales para la comunicaci&oacute;n entre ambos entornos. Nota: Agregar informaci&oacute;n sobre arquitecturas. **</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Se iniciar&aacute; con una introducci&oacute;n a la arquitectura cliente-servidor, explicando los protocolos HTTP y WebSockets, fundamentales para la comunicaci&oacute;n entre ambos entornos.</li>
                             <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">En cuanto al backend, se abordar&aacute; el uso de frameworks como Node.js con Express, Django con Python, Laravel con PHP y Spring Boot con Java. Se estudiar&aacute; la implementaci&oacute;n de controladores, modelos de datos y seguridad, as&iacute; como la conexi&oacute;n con bases de datos SQL y NoSQL.</li>
                             <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Posteriormente, se revisar&aacute;n los frameworks de desarrollo en el cliente, explorando las ventajas y caracter&iacute;sticas de bibliotecas como React, Angular y Vue.js. Se analizar&aacute; c&oacute;mo gestionan el estado, la interactividad y el rendimiento, as&iacute; como su integraci&oacute;n con APIs REST y GraphQL.</li>
                             <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Tambi&eacute;n se analizar&aacute; la gesti&oacute;n de autenticaci&oacute;n y autorizaci&oacute;n mediante JWT, OAuth y OpenID Connect, garantizando la protecci&oacute;n de la informaci&oacute;n y el acceso seguro a los recursos del sistema.</li>
-                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Finalmente, se revisar&aacute;n los principios de despliegue y escalabilidad en la nube, cubriendo servicios como AWS, Azure y Google Cloud, as&iacute; como la implementaci&oacute;n de CI/CD para la automatizaci&oacute;n de pruebas y despliegue continuo. (Nota: agregar informaci&oacute;n sobre Contenedores.).</li>
+                            <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Finalmente, se revisar&aacute;n los principios de despliegue y escalabilidad en la nube, cubriendo servicios como AWS, Azure y Google Cloud, as&iacute; como la implementaci&oacute;n de CI/CD para la automatizaci&oacute;n de pruebas y despliegue continuo.</li>
                             <li className="py-2 px-4 border-b border-gray-200 last:border-b-0">Este material proporciona una gu&iacute;a completa para el aprendizaje del desarrollo web moderno, permitiendo a los estudiantes adquirir habilidades fundamentales para la creaci&oacute;n de aplicaciones eficientes y seguras en el entorno digital actual.</li>
                         </ul>
                     </div>
@@ -105,8 +105,16 @@ export const courseData = {
                 content: (
                     <div className="prose max-w-none">
                         <h4 className="text-xl font-bold text-purple-700">Objetivo General del Polilibro</h4>
+                        &nbsp;
                         <p>Aplicar los conceptos y modelos de los frameworks de desarrollo web más populares para crear aplicaciones robustas, escalables y seguras, diferenciando claramente las responsabilidades del lado del cliente y del lado del servidor.</p>
                         <p>El apoyo didáctico de la unidad de aprendizaje de &quot;Web Client and Backend Development Frameworks&quot; tiene la finalidad complementar y reforzar el curso en su modalidad presencial.</p>
+                        <Image
+                            src="/images/objetivo.jpg"
+                            alt="objetivo general"
+                            width={400}
+                            height={200}
+                            className="rounded-md shadow-md mx-auto"
+                        />
                     </div>
                 )
             },
@@ -131,7 +139,7 @@ export const courseData = {
                 id: 'organizacion',
                 icon: <FaListAlt />,
                 title: "Organización del Polilibro",
-                /*content: <OrganizationContent />*/
+
                 content: (
                     <div className="text-center">
                         { }

@@ -8,7 +8,7 @@ import { courseData } from '@/courseData';
 import { FaCodeBranch, FaChevronRight, FaPlay, FaBookOpen, FaTasks } from 'react-icons/fa'
 
 const handlePlayVideo = () => {
-    const urlVideo = 'https://youtu.be/wTpuKOhGfJE?si=jYJFJkLi2Bxonm5w'; // Reemplaza ID_DE_TU_VIDEO con el ID real del video
+    const urlVideo = 'https://youtu.be/wTpuKOhGfJE?si=jYJFJkLi2Bxonm5w';
     window.open(urlVideo, '_blank', 'noopener,noreferrer');
 };
 

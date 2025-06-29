@@ -1,14 +1,12 @@
-// src/components/TopicSidebar.js
-
-"use client"; // ¡IMPORTANTE! Este es ahora un Client Component.
+"use client";
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaPrint } from 'react-icons/fa';
 
-// Este es el componente que renderizará la "Tabla de Contenidos"
+
 const TopicSidebar = ({ unit }) => {
-    // Obtenemos la ruta actual del navegador, ej: /unidad-1/1-2-arquitectura-monolitica
+
     const pathname = usePathname();
 
     return (
