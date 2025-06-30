@@ -1,4 +1,4 @@
-import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle, FaRegLightbulb, FaTasks } from 'react-icons/fa';
+import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle, FaRegLightbulb, FaTasks, FaAddressCard } from 'react-icons/fa';
 import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
@@ -49,6 +49,59 @@ const PlaceholderContent = ({ title }) => (
     </div>
 );
 
+const AboutPolilibroContent = () => {
+    // Datos de los autores
+    const authors = [
+        { name: 'Raul Cardoso Acevedo', role: 'Desarrollador Principal', avatar: '/images/avatar-placeholder.png' },
+        { name: 'Alonso Domínguez López', role: 'Colaborador de Contenido', avatar: '/images/avatar-placeholder.png' }
+    ];
+
+    return (
+        <div className="text-center">
+            <h4 className="text-xl font-bold text-purple-700 mb-4">Acerca de la elaboración de este Polilibro</h4>
+            &nbsp;
+
+            <FeatureIcon icon={<FaAddressCard />} />
+
+            {/* Tabla de Autores */}
+            <div className="w-full max-w-3xl mx-auto border border-gray-300 rounded-lg shadow-md overflow-hidden mb-8">
+                <div className="bg-purple-600 text-white font-bold p-3 text-center">
+                    Acerca de los autores
+                </div>
+                <div className="flex flex-col md:flex-row">
+                    {/* Columna Izquierda: Nombres y Avatares */}
+                    <div className="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-gray-200 bg-purple-50 p-4">
+                        {authors.map((author, index) => (
+                            <div key={author.name} className={`flex items-center gap-4 ${index > 0 ? 'mt-4' : ''}`}>
+                                <Image src={author.avatar} alt={`Avatar de ${author.name}`} width={60} height={60} className="rounded-full" />
+                                <div>
+                                    <p className="font-semibold text-gray-800 text-left">{author.name}</p>
+                                    <p className="text-sm text-gray-600 text-left">{author.role}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    {/* Columna Derecha: Afiliación */}
+                    <div className="w-full md:w-2/3 p-4 text-left flex flex-col justify-center">
+                        <p className="font-semibold text-gray-700">Carrera:</p>
+                        <p className="text-gray-600 mb-2">Ingeniería en Sistemas Computacionales</p>
+                        <p className="font-semibold text-gray-700">Semestre:</p>
+                        <p className="text-gray-600 mb-2">8vo Semestre</p>
+                        <p className="font-semibold text-gray-700">Institución:</p>
+                        <p className="text-gray-600">Unidad Profesional Interdisciplinaria de Ingeniería Campus Zacatecas (UPIIZ - IPN)</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Nota Final */}
+            <div className="flex justify-center items-center gap-2 text-gray-600">
+                <FaLightbulb className="text-yellow-500" />
+                <p><strong>NOTA:</strong> La Bibliografía recomendada para el estudio del Polilibro es la misma que se ocupó para la elaboración de este material.</p>
+            </div>
+        </div>
+    );
+};
+
 export const courseData = {
     title: "Web Client and Backend Development Frameworks",
     instructor: "Efraín Arredondo Morales",
@@ -78,6 +131,7 @@ export const courseData = {
                 content: (
                     <div className="prose max-w-none">
                         <h4 className="text-xl font-bold text-purple-700">El concepto de Desarrollo Web en Cliente y Servidor</h4>
+                        &nbsp;
                         <p>El desarrollo web moderno se basa en la interacción entre el cliente y el servidor para ofrecer experiencias dinámicas y funcionales a los usuarios. Desde la carga de una simple página web hasta la implementación de complejas aplicaciones en línea, la comunicación entre estos dos componentes es fundamental. El cliente, representado por navegadores y aplicaciones, solicita información, mientras que el servidor procesa dichas solicitudes y devuelve respuestas, permitiendo la interacción eficiente y segura entre usuarios y sistemas.</p>
                         &nbsp;
                         <p>Los frameworks de desarrollo en cliente y servidor han revolucionado la creación de aplicaciones web, facilitando la programación, mejorando la seguridad y optimizando el rendimiento. Tecnologías como React, Angular y Vue.js dominan el desarrollo del lado del cliente, mientras que frameworks como Express.js, Django, Laravel y Spring Boot lideran el backend, proporcionando estructuras robustas para la gestión de datos y la autenticación.</p>
@@ -143,7 +197,7 @@ export const courseData = {
                 content: (
                     <div className="text-center">
                         { }
-                        <h4 className="text-2xl font-bold text-purple-700 mb-4">¿Cómo está organizado el Polilibro?</h4>
+                        <h4 className="text-xl font-bold text-purple-700 mb-4">¿Cómo está organizado el Polilibro?</h4>
 
                         { }
                         <FeatureIcon icon={<FaListAlt />} />
@@ -193,7 +247,8 @@ export const courseData = {
                 title: "Bibliografía recomendada",
                 content: (
                     <div className="text-left">
-                        <h4 className="text-2xl font-bold text-purple-700 mb-4 text-center">Bibliografía recomendada para el estudio del Polilibro</h4>
+                        <h4 className="text-xl font-bold text-purple-700 mb-4 text-center">Bibliografía recomendada para el estudio del Polilibro</h4>
+                        &nbsp;
 
                         <FeatureIcon icon={<FaBookOpen />} />
 
@@ -220,7 +275,7 @@ export const courseData = {
                 id: 'acerca',
                 icon: <MdPending />,
                 title: "Acerca del polilibro",
-                content: (<div className="prose max-w-none">Acerda del autor</div>)
+                content: <AboutPolilibroContent />
             },
 
         ]

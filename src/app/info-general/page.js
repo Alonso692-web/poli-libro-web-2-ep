@@ -60,7 +60,8 @@ export default async function InfoGeneralPage({ searchParams }) {
                 ...tab,
                 content: (
                     <div className="text-center">
-                        <h4 className="text-2xl font-bold text-purple-700 mb-4">¿Cómo está organizado el Polilibro?</h4>
+                        <h4 className="text-xl font-bold text-purple-700 mb-4">¿Cómo está organizado el Polilibro?</h4>
+                        &nbsp;
                         <FeatureIcon icon={<FaListAlt />} />
 
                         {/* Mostramos el contenido correcto basado en la URL */}
