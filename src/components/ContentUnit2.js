@@ -1,7 +1,18 @@
-// src/components/ContentUnit2.js
 import React from 'react';
-import { FaBook, FaYoutube, FaLink, FaLightbulb, FaTools, FaLock, FaExchangeAlt } from 'react-icons/fa';
+import { FaBook, FaYoutube, FaLink, FaLightbulb, FaTools, FaLock, FaExchangeAlt, FaGraduationCap } from 'react-icons/fa';
 import Image from 'next/image';
+
+const BookOpenIcon = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+);
+
+const GlobeAltIcon = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+    </svg>
+);
 
 const ContentSection = ({ title, children }) => (
     <div className="mb-8">
@@ -43,6 +54,34 @@ const ResourceItem = ({ type, children }) => {
         <li className="flex items-start mb-2">
             <span className="mr-2 mt-1">{icons[type] || <FaLink />}</span>
             <span>{children}</span>
+        </li>
+    );
+};
+
+const ResourceItemURL = ({ type, children, url }) => {
+    const icons = {
+        video: <FaYoutube className="text-red-500 mr-2" />,
+        article: <FaLink className="text-blue-500 mr-2" />,
+        book: <FaBook className="text-green-500 mr-2" />,
+        course: <FaGraduationCap className="text-purple-500 mr-2" />,
+        documentation: <FaBook className="text-indigo-500 mr-2" />
+    };
+
+    return (
+        <li className="flex items-start mb-2 bg-gray-50 p-3 rounded hover:bg-gray-100 transition">
+            {type === 'video' ? (
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                    <span className="flex items-center">
+                        {icons[type]}
+                        {children}
+                    </span>
+                </a>
+            ) : (
+                <span className="flex items-center">
+                    <span className="mt-1">{icons[type] || <FaLink className="mr-2" />}</span>
+                    <span>{children}</span>
+                </span>
+            )}
         </li>
     );
 };
@@ -1052,12 +1091,12 @@ export const Content_2_4 = () => (
                 <ResourceItem type="article">
                     SOAP UI Documentation
                 </ResourceItem>
-                <ResourceItem type="video">
-                    API Testing and Debugging with Postman – YouTube
-                </ResourceItem>
                 <ResourceItem type="tool">
                     Postman, SOAP UI, Insomnia, Fiddler
                 </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/CLG0ha_a0q8?si=QN5a-Rv0L9149WLK">
+                    API Testing and Debugging with Postman – YouTube
+                </ResourceItemURL>
             </ul>
         </ContentSection>
     </div>
@@ -1691,7 +1730,488 @@ export const Content_2_6_6 = () => (
     </div>
 );
 
-// Exportar todos los componentes como un objeto
+export const References_U2 = () => (
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg my-8">
+        <h4 className="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-3 mb-6">
+            Bibliografía y Recursos Digitales - Unidad 2
+        </h4>
+
+        <div className="space-y-8">
+            {/* Sección Bibliografía Básica */}
+            <div>
+                <h5 className="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Bibliografía Básica
+                </h5>
+                <ul className="space-y-3 pl-2">
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Papazoglou, M. <span className="italic text-gray-700">Web Services: Principles and Technology</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Cerami, E. <span className="italic text-gray-700">Web Services Essentials</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Ert, T. <span className="italic text-gray-700">SOA: Principles of Service Design</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Richardson, L. y Amundsen, M. <span className="italic text-gray-700">RESTful Web APIs</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Masse, M. <span className="italic text-gray-700">REST API Design Rulebook</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Ray, E. T. <span className="italic text-gray-700">Learning XML</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Marrs, T. <span className="italic text-gray-700">JSON at Work</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Fawcett, J. y Ayers, D. <span className="italic text-gray-700">Beginning XML</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Crockford, D. <span className="italic text-gray-700">JavaScript: The Good Parts</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Geewax, J. J. <span className="italic text-gray-700">API Design Patterns</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Richer, J. y Sanso, A. <span className="italic text-gray-700">OAuth 2 in Action</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Madden, N. <span className="italic text-gray-700">API Security in Action</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Sirivardena, P. <span className="italic text-gray-700">Securing APIs with OAuth 2.0</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>W3C. <span className="italic text-gray-700">SOAP 1.2 Specification</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>W3C. <span className="italic text-gray-700">WSDL 1.1 Specification</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>W3C. <span className="italic text-gray-700">XML 1.0 Specification</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>W3C. <span className="italic text-gray-700">XSD Schema Language</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 8259: The JSON Data Interchange Format</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 7231: HTTP/1.1 Semantics and Content</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 6749: OAuth 2.0 Framework</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 7617: The &apos;Basic&apos; HTTP Authentication Scheme</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 5246: TLS Protocol Version 1.2</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>IETF. <span className="italic text-gray-700">RFC 7519: JSON Web Token</span>.</span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>OpenID Foundation. <span className="italic text-gray-700">OpenID Connect Core 1.0</span>.</span>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Sección Recursos Digitales */}
+            <div>
+                <h5 className="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                    Recursos Digitales
+                </h5>
+                <ul className="space-y-3 pl-2">
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>MDN Web Docs. <a
+                            href="https://developer.mozilla.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            SOAP vs REST
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>REST API Tutorial. <a
+                            href="https://www.restapitutorial.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            REST API Tutorial
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Nordic APIs. <a
+                            href="https://nordicapis.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            SOAP vs REST - A Real World Comparison
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Mozilla Developer Network. <a
+                            href="https://developer.mozilla.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            JSON vs XML: What&apos;s the Difference?
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>json.org. <a
+                            href="https://www.json.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            JSON Official Documentation
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Microsoft. <a
+                            href="https://docs.microsoft.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            API Style Guide
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>OWASP. <a
+                            href="https://owasp.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            API Security Best Practices
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>OWASP. <a
+                            href="https://owasp.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            API Security Top 10
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>JWT.io. <a
+                            href="https://jwt.io"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            JSON Web Tokens Documentation
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Postman Learning Center. <a
+                            href="https://learning.postman.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Postman Documentation
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>SOAP UI Documentation. <a
+                            href="https://www.soapui.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            SOAP UI Documentation
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Guru99. <a
+                            href="https://www.guru99.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            How to Use Postman for API Testing
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Insomnia Docs. <a
+                            href="https://docs.insomnia.rest"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Debugging REST APIs with Insomnia
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Nordic APIs. <a
+                            href="https://nordicapis.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Top API Testing Tools
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>YouTube. <a
+                            href="https://www.youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            API Testing and Debugging with Postman
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Google Maps API. <a
+                            href="https://developers.google.com/maps"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Google Maps API Documentation
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Stripe API. <a
+                            href="https://stripe.com/docs/api"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Stripe API Reference
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>freeCodeCamp. <a
+                            href="https://www.freecodecamp.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Getting Started with Third-Party APIs
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Medium. <a
+                            href="https://medium.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            How to Consume External APIs in Your App
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>YouTube. <a
+                            href="https://www.youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Using APIs from Third Parties
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Nordic APIs. <a
+                            href="https://nordicapis.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Top 10 Best Practices for REST API Design
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>REST API Tutorial. <a
+                            href="https://restapitutorial.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            How to Design a REST API
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Auth0 Blog. <a
+                            href="https://auth0.com/blog"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Understanding OAuth 2.0 Implicit Flow
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Okta Developer. <a
+                            href="https://developer.okta.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Why Implicit Flow is being deprecated
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Cloudflare Learning Center. <a
+                            href="https://www.cloudflare.com/learning"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            How TLS Works
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>AWS Docs. <a
+                            href="https://docs.aws.amazon.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Implementing Mutual TLS Authentication
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Auth0 Docs. <a
+                            href="https://auth0.com/docs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Implementing JWT Authentication
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>DigitalOcean. <a
+                            href="https://www.digitalocean.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Token-based Authentication Explained
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Okta Developer. <a
+                            href="https://developer.okta.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Getting Started with OAuth 2.0
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Auth0. <a
+                            href="https://auth0.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            Introduction to OpenID Connect
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>YouTube. <a
+                            href="https://www.youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            OAuth 2.0 and OpenID Connect Explained
+                        </a></span>
+                    </li>
+                    <li className="flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span>Pluralsight. <a
+                            href="https://www.pluralsight.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        >
+                            API Authorization Best Practices
+                        </a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+);
+
 const ContentUnit2Components = {
     // Temas principales
     Content_2_1,
@@ -1719,7 +2239,8 @@ const ContentUnit2Components = {
     Content_2_6_3,
     Content_2_6_4,
     Content_2_6_5,
-    Content_2_6_6
+    Content_2_6_6,
+    References_U2,
 };
 
 export default ContentUnit2Components;

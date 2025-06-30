@@ -1,4 +1,3 @@
-// src/components/ContentUnit1.js
 import React from 'react';
 import { FaBook, FaYoutube, FaLink, FaLightbulb, FaListOl, FaCode, FaHistory, FaLaptopCode, FaGraduationCap, FaShieldAlt, FaCube, FaServer, FaMobileAlt, FaDatabase, FaCogs, FaSyncAlt, FaCloudUploadAlt, FaLayerGroup, FaObjectGroup, FaPlug, FaCubes, FaSitemap, FaChartLine, FaPalette, FaTools } from 'react-icons/fa';
 import Image from 'next/image';
@@ -42,6 +41,34 @@ const ResourceItem = ({ type, children }) => {
         <li className="flex items-start mb-2 bg-gray-50 p-3 rounded hover:bg-gray-100 transition">
             <span className="mt-1">{icons[type] || <FaLink className="mr-2" />}</span>
             <span>{children}</span>
+        </li>
+    );
+};
+
+const ResourceItemURL = ({ type, children, url }) => {
+    const icons = {
+        video: <FaYoutube className="text-red-500 mr-2" />,
+        article: <FaLink className="text-blue-500 mr-2" />,
+        book: <FaBook className="text-green-500 mr-2" />,
+        course: <FaGraduationCap className="text-purple-500 mr-2" />,
+        documentation: <FaBook className="text-indigo-500 mr-2" />
+    };
+
+    return (
+        <li className="flex items-start mb-2 bg-gray-50 p-3 rounded hover:bg-gray-100 transition">
+            {type === 'video' ? (
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                    <span className="flex items-center">
+                        {icons[type]}
+                        {children}
+                    </span>
+                </a>
+            ) : (
+                <span className="flex items-center">
+                    <span className="mt-1">{icons[type] || <FaLink className="mr-2" />}</span>
+                    <span>{children}</span>
+                </span>
+            )}
         </li>
     );
 };
@@ -111,9 +138,9 @@ export const Content_1_1 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
+                <ResourceItemURL type="video" url="https://www.youtube.com/watch?v=rtmFCcjEgEw">
                     Principios SOLID - Fazt Code
-                </ResourceItem>
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Principios de diseño de software - FreeCodeCamp
                 </ResourceItem>
@@ -173,9 +200,9 @@ export const Content_1_2 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
+                <ResourceItemURL type="video" url="https://www.youtube.com/watch?v=U7QkZytCqP4">
                     Monolithic vs Microservices - TechWorld
-                </ResourceItem>
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Arquitectura monolítica - RedHat
                 </ResourceItem>
@@ -246,9 +273,9 @@ export const Content_1_2_1 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
+                <ResourceItemURL type="video" url="https://www.youtube.com/watch?v=3c-iBn73dDE">
                     ¿Qué es Docker y para qué sirve? - Fazt
-                </ResourceItem>
+                </ResourceItemURL>
                 <ResourceItem type="documentation">
                     Documentación oficial de Docker: https://docs.docker.com/
                 </ResourceItem>
@@ -317,9 +344,9 @@ export const Content_1_3 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
-                    Arquitectura en capas explicada - Código Facilito
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/uFDT-NHPe-s?si=QkRwsGqjJbhQ3RCK">
+                    Patrón de arquitectura por capas - Manuel Zapata
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     3-tier architecture - IBM Cloud Docs
                 </ResourceItem>
@@ -388,9 +415,9 @@ export const Content_1_3_1 = () => (
                 <ResourceItem type="article">
                     Patrón DAO en Java - Baeldung
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Capa de acceso a datos - Píldoras Informáticas
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/fxPQR-HcffQ?si=Et2XBBYAtodZugSu">
+                    Capa de acceso a datos - Spring Framework
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Patterns of Enterprise Application Architecture - Martin Fowler
                 </ResourceItem>
@@ -445,9 +472,9 @@ export const Content_1_3_2 = () => (
                 <ResourceItem type="article">
                     Separar lógica de negocio - Stack Overflow
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Lógica de negocios vs lógica de presentación
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/grS21ShiXaw?si=Snw0ERtvh6dPKiHH">
+                    Lógica de negocio y de aplicación | clean architecture
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Domain-Driven Design - Eric Evans
                 </ResourceItem>
@@ -510,9 +537,9 @@ export const Content_1_3_3 = () => (
                 <ResourceItem type="article">
                     Diseño de interfaces de usuario - Nielsen Norman Group
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Diseño UI/UX básico - Código Facilito
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/ABggYX2jOsM?si=_djH68mhnDc29SiW">
+                    Las 12 LEYES que TODO DESARROLLADOR debería CONOCER | UX & UI
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Don&apos;t Make Me Think - Steve Krug
                 </ResourceItem>
@@ -578,9 +605,9 @@ export const Content_1_4 = () => (
                 <ResourceItem type="book">
                     Clean Architecture - Robert C. Martin
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Clean Architecture explicada - Código Facilito
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/07JAkHUoSKE?si=uHsgHKeVWhnzRdim">
+                    Esto es Clean Architecture en 20 minutos | Todo lo que necesitas saber
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Clean Architecture - Medium (en español)
                 </ResourceItem>
@@ -644,9 +671,9 @@ export const Content_1_4_1 = () => (
                 <ResourceItem type="book">
                     Domain-Driven Design - Eric Evans
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Clean Architecture y modelo del dominio
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://www.youtube.com/watch?v=dH5aSQLXtKg">
+                    Aprende DDD en 20 minutos ⚡ | Domain-Driven Design
+                </ResourceItemURL>
             </ul>
         </ContentSection>
     </div>
@@ -693,9 +720,9 @@ export const Content_1_4_2 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
-                    Arquitectura Limpia + React
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/S3h-u4M1q3w?si=TeEaOKc6Xm74E6Fu">
+                    Qué son los Patrones de Presentación: MVC, MVP, MVVM ¿Son Arquitecturas de Software?
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Implementing Clean Architecture - Jason Taylor
                 </ResourceItem>
@@ -756,9 +783,9 @@ export const Content_1_4_3 = () => (
                 <ResourceItem type="article">
                     Infraestructura en Clean Architecture - The Pragmatic Engineer
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Limpieza de infraestructura con interfaces - DevTalles
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/gUOz3UIv9Ts?si=a_JvFAbBEd9kZxSe">
+                    DevTalles PodCast - 137: ¿Es necesario usar CleanCode y Clean Architecture?
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Clean Architecture - Cap. 22, Implementing Infrastructure
                 </ResourceItem>
@@ -822,9 +849,9 @@ export const Content_1_4_4 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
-                    Clean Architecture + Testing - Fernando Herrera
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/fFBkWYQZC6M?si=W3ty8okyI6T8sDQN">
+                    ¿Qué es el testing unitario? Por qué DEBERÍAS aprenderlo + Ejemplos fáciles de entender
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Test en arquitecturas limpias - Dev.to
                 </ResourceItem>
@@ -884,9 +911,9 @@ export const Content_1_5 = () => (
                 <ResourceItem type="article">
                     Hexagonal Architecture - Alistair Cockburn (original)
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Arquitectura Hexagonal explicada - DevTalles
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/r8-3Iv7XExE?si=W9OWTonHzMKVZ0d4">
+                    ¿Qué es la Arquitectura Hexagonal (Puertos y Adaptadores)? Explicada FÁCIL
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Clean Architecture - Robert C. Martin, capítulo sobre puertos y adaptadores
                 </ResourceItem>
@@ -949,9 +976,9 @@ export const Content_1_5_1 = () => (
                 <ResourceItem type="article">
                     Hexagonal Architecture en la práctica - Baeldung
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Dominio en arquitectura hexagonal
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/PcoeGzGomqs?si=9Qv-iqAU1tNteVRx">
+                    ¡Domina la Arquitectura Hexagonal con JAVA y SPRING!
+                </ResourceItemURL>
             </ul>
         </ContentSection>
     </div>
@@ -1013,9 +1040,9 @@ export const Content_1_5_2 = () => (
                 <ResourceItem type="article">
                     Ports & Adapters explicado - Dev.to
                 </ResourceItem>
-                <ResourceItem type="video">
+                <ResourceItemURL type="video" url="https://www.youtube.com/watch?v=aWiwDdx_rdo">
                     Puertos en Hexagonal Architecture - Java Brains
-                </ResourceItem>
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Arquitectura Hexagonal - Manuel Rivero (español)
                 </ResourceItem>
@@ -1075,9 +1102,9 @@ export const Content_1_5_3 = () => (
                 <ResourceItem type="book">
                     Aplicaciones empresariales con arquitectura hexagonal - Herberto Granja
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Capa de servicios en Clean/Hexagonal Architecture
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/VY-qsBIV4GY?si=OpzYr4WAXGK3hgl-">
+                    10. Spring Boot | Pruebas Unitarias (Capa de Servicios)
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Application Service Layer - Martin Fowler
                 </ResourceItem>
@@ -1137,9 +1164,9 @@ export const Content_1_5_4 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
-                    Adaptadores en arquitectura hexagonal - DevTalles
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/VLhdDYaW-uI?si=JRDcT2P77MO9-bxH">
+                    ¿Qué es la Arquitectura Hexagonal? | Puertos y Adaptadores
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Hexagonal Architecture - Baeldung
                 </ResourceItem>
@@ -1201,9 +1228,9 @@ export const Content_1_6 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
+                <ResourceItemURL type="video" url="https://youtu.be/9R2hFwIPGnQ?si=mktj8AjMyNluln_j">
                     ¿Qué son los microservicios? - Fazt Code
-                </ResourceItem>
+                </ResourceItemURL>
                 <ResourceItem type="article">
                     Microservices architecture - Microsoft Learn
                 </ResourceItem>
@@ -1268,9 +1295,9 @@ export const Content_1_6_1 = () => (
                 <ResourceItem type="article">
                     12 factores de microservicios - The Twelve-Factor App
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Microservicios desde cero - Deivcho Dev
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/EWqAY_-R57A?si=yL8LFbL_FEA1jfrR">
+                    SPRING CLOUD COMPLETO: Tus MICROSERVICIOS en la nube FACILMENTE con JAVA!
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Microservice Patterns - Chris Richardson
                 </ResourceItem>
@@ -1334,9 +1361,9 @@ export const Content_1_6_2 = () => (
                 <ResourceItem type="article">
                     Bounded Contexts - Martin Fowler
                 </ResourceItem>
-                <ResourceItem type="video">
-                    DDD aplicado a microservicios - DevTalles
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/JfD_Z8Cbyt8?si=eg9uKdYSU849cdmx">
+                    Aplica DDD en el Código Legacy para tener Microservicios
+                </ResourceItemURL>
             </ul>
         </ContentSection>
     </div>
@@ -1401,9 +1428,9 @@ export const Content_1_6_3 = () => (
                 <ResourceItem type="article">
                     Reference Architecture for Microservices - Microsoft
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Modelo de referencia para microservicios
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/ODY4q4_3Acc?si=7K5Q0DQ26pKYFy3V">
+                    Qué es el MODELO OSI ✅ Explicado de manera sencilla | Alberto López
+                </ResourceItemURL>
                 <ResourceItem type="documentation">
                     Documentación: Spring Cloud Netflix
                 </ResourceItem>
@@ -1462,9 +1489,9 @@ export const Content_1_6_4 = () => (
                 <ResourceItem type="article">
                     Implementación con Spring Cloud
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Microservicios con Docker
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/Q2BIdKGQo34?si=_MVk7nlXIoRBfccM">
+                    Guia de DOCKER y PYTHON 2025 | TODO Lo Que DEBES SABER
+                </ResourceItemURL>
             </ul>
         </ContentSection>
     </div>
@@ -1522,9 +1549,9 @@ export const Content_1_6_5 = () => (
 
         <ContentSection title="Información de apoyo">
             <ul className="space-y-3">
-                <ResourceItem type="video">
-                    Despliegue de microservicios con Docker y Kubernetes
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/gjRoNFopFig?si=ZsZ9vj2cvt2DqSPh">
+                    ¿Qué es Docker y Kubernetes? - EDteam
+                </ResourceItemURL>
                 <ResourceItem type="course">
                     CI/CD con microservicios - Platzi / Udemy
                 </ResourceItem>
@@ -1587,9 +1614,9 @@ export const Content_1_6_6 = () => (
                 <ResourceItem type="article">
                     Micro Frontends - Martin Fowler
                 </ResourceItem>
-                <ResourceItem type="video">
-                    Aplicaciones web desacopladas - Midudev
-                </ResourceItem>
+                <ResourceItemURL type="video" url="https://youtu.be/QSb4VZnF9q4?si=FF7V4aNcwyXrRk5f">
+                    PWA | Progressive Web Apps, Introducción a las Aplicaciones Web Progresivas
+                </ResourceItemURL>
                 <ResourceItem type="book">
                     Designing Web APIs - Brenda Jin
                 </ResourceItem>

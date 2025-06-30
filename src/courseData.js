@@ -1,4 +1,4 @@
-import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle, FaRegLightbulb, FaTasks, FaAddressCard } from 'react-icons/fa';
+import { FaBookmark, FaBookOpen, FaCertificate, FaBook, FaCog, FaLightbulb, FaBullseye, FaListAlt, FaTable, FaCheckCircle, FaInfoCircle, FaClipboardList, FaAddressCard, FaFileContract } from 'react-icons/fa';
 import { VscSymbolStructure } from "react-icons/vsc";
 import { MdPending } from "react-icons/md";
 import Image from 'next/image';
@@ -38,14 +38,6 @@ const BienvenidaContent = () => (
         <div className="flex-shrink-0">
             <Image src="/images/bienvenidos.jpg" alt="Bienvenidos" width={400} height={250} className="rounded-md shadow-lg" />
         </div>
-    </div>
-);
-
-// Placeholder para otros contenidos
-const PlaceholderContent = ({ title }) => (
-    <div className="text-center py-12 text-gray-500">
-        <h3 className="text-2xl font-bold mb-2">Contenido para &quot;{title}&quot;</h3>
-        <p>Este recurso está en construcción.</p>
     </div>
 );
 
@@ -101,6 +93,102 @@ const AboutPolilibroContent = () => {
         </div>
     );
 };
+
+const EvaluationTableContent = () => {
+    const evaluationData = {
+        diagnostica: {
+            percent: "0%",
+            details: "Evaluaciones en plataforma"
+        },
+        formativa: [
+            { type: "Teórica", percent: "20%", details: "Actividades en plataforma" },
+            { type: "Práctica", percent: "20%", details: "Actividades en laboratorio" }
+        ],
+        sumativa: {
+            percent: "60%",
+            details: "Tres exámenes departamentales"
+        }
+    };
+
+    return (
+        <div className="w-full max-w-5xl mx-auto">
+            <h2 className="text-xl font-bold text-purple-700 text-center mb-8">
+                Tabla de Evaluación General
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 shadow-lg rounded-lg overflow-hidden border border-gray-300">
+
+                <div className="bg-purple-800 text-white p-4 font-bold text-center">Diagnóstica</div>
+                <div className="bg-purple-800 text-white p-4 font-bold text-center border-l border-r border-purple-900">Formativa</div>
+                <div className="bg-purple-800 text-white p-4 font-bold text-center">Sumativa</div>
+
+                <div className="bg-purple-200 p-6 text-center flex flex-col justify-center items-center">
+                    <div className="flex items-center gap-2 text-lg text-purple-800">
+                        <FaCheckCircle />
+                        <span className="font-bold">{evaluationData.diagnostica.percent}</span>
+                    </div>
+                    <p className="mt-2">{evaluationData.diagnostica.details}</p>
+                </div>
+
+                <div className="bg-purple-100 p-6 text-center border-l border-r border-gray-200 flex flex-col justify-center items-center space-y-6">
+                    {evaluationData.formativa.map(item => (
+                        <div key={item.type}>
+                            <div className="flex items-center gap-2 text-lg text-purple-800">
+                                <FaCheckCircle />
+                                <span>{item.type} <strong className="ml-1">{item.percent}</strong></span>
+                            </div>
+                            <p className="mt-2">{item.details}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="bg-purple-50 p-6 text-center flex flex-col justify-center items-center">
+                    <div className="flex items-center gap-2 text-lg text-purple-800">
+                        <FaCheckCircle />
+                        <span className="font-bold">{evaluationData.sumativa.percent}</span>
+                    </div>
+                    <p className="mt-2">{evaluationData.sumativa.details}</p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const rubricsData = [
+    { title: "Rúbrica para evaluar presentaciones", href: "#" },
+    { title: "Rúbrica para evaluar problemas", href: "#" },
+    { title: "Rúbrica para evaluar resúmenes", href: "#" },
+    { title: "Rúbrica para evaluar wikis", href: "#" },
+];
+
+const RubricsContent = () => (
+    <div className="text-center">
+        <h4 className="text-xl font-bold text-purple-700 mb-4">Rúbricas de Actividades</h4>
+        &nbsp;
+
+        <FeatureIcon icon={<FaFileContract />} />
+
+        <div className="w-full max-w-2xl mx-auto space-y-4 mb-8">
+            {rubricsData.map((rubric) => (
+                <a
+                    key={rubric.title}
+                    href={rubric.href}
+                    className="flex items-center gap-4 w-full p-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition-colors"
+                >
+                    <FaClipboardList className="text-xl" />
+                    <span>{rubric.title}</span>
+                </a>
+            ))}
+        </div>
+
+        <div className="max-w-3xl mx-auto bg-slate-100 border border-slate-200 rounded-lg p-6 text-left shadow-inner">
+            <p className="text-gray-700 mb-4">
+                Las rúbricas dependen de la actividad que se realice. Cada una de ellas tiene criterios específicos para evaluar el desempeño del estudiante en diferentes tareas, como presentaciones, problemas, resúmenes y wikis.
+            </p>
+        </div>
+    </div>
+);
+
 
 export const courseData = {
     title: "Web Client and Backend Development Frameworks",
@@ -233,13 +321,13 @@ export const courseData = {
                 id: 'evaluacion',
                 icon: <FaCheckCircle />,
                 title: "Tabla de Evaluación",
-                content: (<div className="prose max-w-none">Tabla de evaluación</div>)
+                content: <EvaluationTableContent />
             },
             {
                 id: 'actividades',
                 icon: <FaTable />,
                 title: "Rúbrica de Actividades",
-                content: (<div className="prose max-w-none">Rúbrica de actividades</div>)
+                content: <RubricsContent />
             },
             {
                 id: 'bibliografia',
@@ -611,6 +699,13 @@ export const courseData = {
                                 component: <ContentUnit2.Content_2_6_6 />
                             }
                         ]
+                    },
+                    {
+                        id: "2.7",
+                        slug: "2-7-referencias",
+                        title: "Referencias y recursos",
+                        component: <ContentUnit2.References_U2 />,
+                        subtopics: []
                     }
                 ]
             },
