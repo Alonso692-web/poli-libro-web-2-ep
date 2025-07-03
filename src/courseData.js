@@ -5,6 +5,8 @@ import Image from 'next/image';
 import * as ContentUnit1 from "./components/ContentUnit1";
 import * as ContentUnit2 from "./components/ContentUnit2";
 import * as ContentUnit3 from "./components/ContentUnit3";
+import * as ContentUnit4 from "./components/ContentUnit4";
+
 import { TechToolsContent } from "./components/TechComponent";
 
 const FeatureIcon = ({ icon }) => (
@@ -810,5 +812,124 @@ export const courseData = {
                     }
                 ]
             },
+            {
+                id: 4,
+                slug: "unidad-4",
+                title: "Unidad IV",
+                subtitle: "Desarrollo de aplicaciones del lado del cliente",
+                banner: "/banners/client-side.jpg",
+                subtext: "Diseño de interfaces, acceso a datos y comunicación cliente-servidor para aplicaciones web modernas.",
+                objective: "Desarrolla aplicaciones de lado del cliente a partir del diseño de interfaces, mecanismos de acceso y comunicación cliente-servidor.",
+                content: [
+                    {
+                        id: "4.1",
+                        slug: "4-1-diseno-y-desarrollo-de-interfaces",
+                        title: "4.1. Diseño y desarrollo de interfaces",
+                        component: <ContentUnit4.Content_4_1 />,
+                        subtopics: [
+                            {
+                                id: "4.1.1",
+                                slug: "4-1-1-desarrollo-de-interfaz-basado-en-componentes",
+                                title: "4.1.1. Desarrollo de interfaz basado en componentes",
+                                component: <ContentUnit4.Content_4_1_1 />
+                            },
+                            {
+                                id: "4.1.2",
+                                slug: "4-1-2-diseno-y-construccion-de-interfaz-de-usuario",
+                                title: "4.1.2. Diseño y construcción de interfaz de usuario",
+                                component: <ContentUnit4.Content_4_1_2 />
+                            },
+                            {
+                                id: "4.1.3",
+                                slug: "4-1-3-diseno-responsivo-y-adaptable",
+                                title: "4.1.3. Diseño responsivo y adaptable",
+                                component: <ContentUnit4.Content_4_1_3 />
+                            },
+                            {
+                                id: "4.1.4",
+                                slug: "4-1-4-pruebas-de-usabilidad-de-la-interfaz",
+                                title: "4.1.4. Pruebas de usabilidad de la interfaz",
+                                component: <ContentUnit4.Content_4_1_4 />
+                            }
+                        ]
+                    },
+                    {
+                        id: "4.2",
+                        slug: "4-2-mecanismos-de-acceso-a-informacion-mediante-interfaz-de-usuario",
+                        title: "4.2. Mecanismos de acceso a información mediante interfaz de usuario",
+                        component: <ContentUnit4.Content_4_2 />,
+                        subtopics: [
+                            {
+                                id: "4.2.1",
+                                slug: "4-2-1-diseno-y-construccion-de-mecanismos-de-acceso-a-datos",
+                                title: "4.2.1. Diseño y construcción de mecanismos de acceso a datos",
+                                component: <ContentUnit4.Content_4_2_1 />
+                            },
+                            {
+                                id: "4.2.2",
+                                slug: "4-2-2-acceso-a-datos-en-estructuras-relacionales",
+                                title: "4.2.2. Acceso a datos en estructuras relacionales",
+                                component: <ContentUnit4.Content_4_2_2 />
+                            },
+                            {
+                                id: "4.2.3",
+                                slug: "4-2-3-acceso-a-datos-en-estructuras-no-relacionales",
+                                title: "4.2.3. Acceso a datos en estructuras no relacionales",
+                                component: <ContentUnit4.Content_4_2_3 />
+                            }
+                        ]
+                    },
+                    {
+                        id: "4.3",
+                        slug: "4-3-comunicacion-cliente-servidor",
+                        title: "4.3. Comunicación cliente-servidor",
+                        component: <ContentUnit4.Content_4_3 />,
+                        subtopics: [
+                            {
+                                id: "4.3.1",
+                                slug: "4-3-1-implementacion-de-aplicaciones-de-comunicacion",
+                                title: "4.3.1. Implementación de aplicaciones de comunicación",
+                                component: <ContentUnit4.Content_4_3_1 />
+                            },
+                            {
+                                id: "4.3.2",
+                                slug: "4-3-2-consumo-de-apis-rest",
+                                title: "4.3.2. Consumo de API´s REST",
+                                component: <ContentUnit4.Content_4_3_2 />
+                            },
+                            {
+                                id: "4.3.3",
+                                slug: "4-3-3-implementacion-de-librerias-para-el-desarrollo-de-interfaz-de-usuario",
+                                title: "4.3.3. Implementación de librerías para el desarrollo de interfaz de usuario",
+                                component: <ContentUnit4.Content_4_3_3 />
+                            },
+                            {
+                                id: "4.3.4",
+                                slug: "4-3-4-pruebas-de-conectividad",
+                                title: "4.3.4. Pruebas de conectividad",
+                                component: <ContentUnit4.Content_4_3_4 />
+                            },
+                            {
+                                id: "4.3.5",
+                                slug: "4-3-5-prueba-de-integridad-de-datos",
+                                title: "4.3.5. Prueba de integridad de datos",
+                                component: <ContentUnit4.Content_4_3_5 />
+                            },
+                            {
+                                id: "4.3.6",
+                                slug: "4-3-6-pruebas-de-cifrado-de-datos",
+                                title: "4.3.6. Pruebas de cifrado de datos",
+                                component: <ContentUnit4.Content_4_3_6 />
+                            },
+                            {
+                                id: "4.3.7",
+                                slug: "4-3-7-pruebas-de-seguridad",
+                                title: "4.3.7. Pruebas de seguridad",
+                                component: <ContentUnit4.Content_4_3_7 />
+                            }
+                        ]
+                    }
+                ]
+            }
         ],
 };

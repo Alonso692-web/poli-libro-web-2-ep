@@ -1,3 +1,4 @@
+
 'use client';
 
 import Sidebar from '@/components/Sidebar';
@@ -8,19 +9,19 @@ import { courseData } from '@/courseData';
 import { FaCodeBranch, FaChevronRight, FaPlay, FaBookOpen, FaTasks } from 'react-icons/fa';
 
 const handlePlayVideo = () => {
-    const urlVideo = 'https://youtu.be/d1qlZp4ylSY?si=C9A-GQiQ-z2gjzXO'; // Reemplaza ID_DE_TU_VIDEO con el ID real del video
+    const urlVideo = 'https://youtu.be/u2Ms34GE14U?si=GAa13Z1vOTN6Pesm'; // Reemplaza ID_DE_TU_VIDEO con el ID real del video
     window.open(urlVideo, '_blank', 'noopener,noreferrer');
 };
 
 export default function Unidad1Page() {
-    const unit = courseData.units.find(u => u.slug === 'unidad-3');
+    const unit = courseData.units.find(u => u.slug === 'unidad-4');
     if (!unit) return <div>Unidad no encontrada</div>;
 
     const breadcrumbItems = [
         { name: 'Cursos', href: '/' },
         { name: 'Polilibros', href: '/' },
         { name: courseData.title, href: '/' },
-        { name: `Unidad III: ${unit.subtitle}`, href: `/${unit.slug}` }
+        { name: `Unidad II: ${unit.subtitle}`, href: `/${unit.slug}` }
     ];
 
     return (
@@ -52,12 +53,10 @@ export default function Unidad1Page() {
                     <div className="space-y-6">
                         {unit.content.map((topic) => (
                             <div key={topic.id}>
-                                {/* Título principal del tema (sin cambios) */}
                                 <div className="flex items-center gap-4 mb-3">
                                     <div className="bg-purple-600 text-white p-3 rounded-md text-sm font-bold">{topic.id} Tema</div>
                                     <h3 className="text-2xl font-light text-gray-800">{topic.title.replace(`${topic.id}. `, "")}</h3>
                                 </div>
-                                {/* Lista de subtemas (sin cambios) */}
                                 <ul className="space-y-3 ml-8">
                                     <li className="flex items-center gap-3">
                                         <FaBookOpen className="text-blue-500 text-lg" />
@@ -65,16 +64,8 @@ export default function Unidad1Page() {
                                     </li>
                                     {topic.subtopics?.map((subtopic) => (
                                         <li key={subtopic.id} className="flex items-center gap-3">
-                                            <FaBookOpen className="text-blue-500 text-lg" />
+                                            <FaTasks className="text-green-500 text-lg" />
                                             <Link href={`/${unit.slug}/${subtopic.slug}`} className="text-blue-600 hover:underline">{subtopic.title}</Link>
-                                        </li>
-                                    ))}
-
-                                    {/* --- ¡NUEVO BLOQUE PARA RENDERIZAR ACTIVIDADES! --- */}
-                                    {topic.activities?.map((activity) => (
-                                        <li key={activity.id} className="flex items-center gap-3 mt-2">
-                                            <FaTasks className="text-orange-500 text-lg" /> {/* Icono diferente para actividades */}
-                                            <Link href={`/${unit.slug}/${activity.slug}`} className="text-orange-600 hover:underline font-semibold">{activity.title}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -84,8 +75,8 @@ export default function Unidad1Page() {
                 </div>
 
                 <nav className="flex justify-between items-center mt-8">
-                    <Link href="/unidad-2" className="text-blue-600 hover:underline">‹ SECCIÓN ANTERIOR<br />Unidad II</Link>
-                    <Link href="/unidad-4" className="text-blue-600 hover:underline text-right">SECCIÓN SIGUIENTE ›<br />Unidad IV</Link>
+                    <Link href="/unidad-3" className="text-blue-600 hover:underline">‹ SECCIÓN ANTERIOR<br />Unidad III</Link>
+                    <Link href="/unidad-5" className="text-blue-600 hover:underline text-right">SECCIÓN SIGUIENTE ›<br />Unidad V</Link>
                 </nav>
             </div>
         </div>
