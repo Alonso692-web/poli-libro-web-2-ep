@@ -86,11 +86,14 @@ export const Content_4_1 = () => (
                 Se enfoca en crear experiencias de usuario intuitivas, accesibles y visualmente atractivas mediante
                 componentes reutilizables y patrones de diseño establecidos.
             </p>
+
             <ImageWithCaption
                 src="/images/unidad4/ui-design.jpg"
                 alt="Diseño de interfaces de usuario"
                 className="my-4 rounded-lg shadow-md w-full max-w-md"
             />
+
+
         </ContentSection>
 
         <ContentSection title="Componentes clave">
