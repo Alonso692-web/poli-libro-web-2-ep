@@ -476,3 +476,50 @@ export const Content_4_3_7 = () => (
         {/* Contenido completo sobre pruebas de seguridad */}
     </div>
 );
+
+export const References_U4 = () => (
+    <div>
+        <ul className="space-y-3 pl-2">
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Zammeti, F. <span className="italic text-gray-700">Modern Full-Stack Development: Using TypeScript, React, Node.js, Webpack, and Docker</span>. Apress, 2020.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Biswas, N. <span className="italic text-gray-700">Beginning React and Firebase: Create Four Beginner-Friendly Projects Using React and Firebase</span>. Apress, 2022.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Hoque, S. <span className="italic text-gray-700">Full-Stack React Projects: Learn MERN stack development by building modern web apps using MongoDB, Express, React, and Node.js</span>. Packt, 2020.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Lim, G. <span className="italic text-gray-700">Beginning MERN Stack: Build and Deploy a Full Stack MongoDB, Express, React, Node.js App</span>. Independently published, 2021.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Google. <span className="italic text-gray-700">Material Design Guidelines</span>. Recuperado de https://material.io/design</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Wathan, A. & Schoger, S. <span className="italic text-gray-700">Refactoring UI</span>. 2018.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>MDN Web Docs. <span className="italic text-gray-700">Client-Server Overview</span>. Recuperado de https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>KODOTI. <span className="italic text-gray-700">Diseño de una API RESTFul</span>. 2020. Recuperado de https://www.youtube.com/watch?v=ZPA5ldaX1K4</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Peyrott, S. <span className="italic text-gray-700">JWT HANDBOOK</span>. 2018. Recuperado de https://auth0.com/resources/ebooks/jwt-handbook</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>React Documentation Team. <span className="italic text-gray-700">React Official Documentation</span>. Recuperado de https://reactjs.org/docs/getting-started.html</span>
+            </li>
+        </ul>
+    </div>
+);

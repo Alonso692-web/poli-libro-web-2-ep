@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { FaHome, FaPrint, FaBookOpen } from 'react-icons/fa';
 import TopicSidebar from '@/components/TopicSidebar';
 
-export default async function TopicDetailPage({ params }) {
+export default async function TopicDetailPage({ params: paramsPromise }) {
+    const params = await paramsPromise; // **Esperar la resolución de params**
     const { topicSlug } = params;
     const unit = courseData.units.find(u => u.slug === 'unidad-3');
 

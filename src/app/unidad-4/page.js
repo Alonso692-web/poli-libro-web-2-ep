@@ -9,7 +9,7 @@ import { courseData } from '@/courseData';
 import { FaCodeBranch, FaChevronRight, FaPlay, FaBookOpen, FaTasks } from 'react-icons/fa';
 
 const handlePlayVideo = () => {
-    const urlVideo = 'https://youtu.be/u2Ms34GE14U?si=GAa13Z1vOTN6Pesm'; // Reemplaza ID_DE_TU_VIDEO con el ID real del video
+    const urlVideo = 'https://youtu.be/KA7Ngcgth0Q?si=ajO4XtcUxBPKE38h';
     window.open(urlVideo, '_blank', 'noopener,noreferrer');
 };
 
@@ -21,7 +21,7 @@ export default function Unidad1Page() {
         { name: 'Cursos', href: '/' },
         { name: 'Polilibros', href: '/' },
         { name: courseData.title, href: '/' },
-        { name: `Unidad II: ${unit.subtitle}`, href: `/${unit.slug}` }
+        { name: `Unidad IV: ${unit.subtitle}`, href: `/${unit.slug}` }
     ];
 
     return (

@@ -6,6 +6,7 @@ import * as ContentUnit1 from "./components/ContentUnit1";
 import * as ContentUnit2 from "./components/ContentUnit2";
 import * as ContentUnit3 from "./components/ContentUnit3";
 import * as ContentUnit4 from "./components/ContentUnit4";
+import * as ContentUnit5 from "./components/ContentUnit5";
 
 import { TechToolsContent } from "./components/TechComponent";
 
@@ -535,6 +536,13 @@ export const courseData = {
                                 component: <ContentUnit1.Content_1_6_6 />
                             }
                         ]
+                    },
+                    {
+                        id: "1.7",
+                        slug: "1-7-referencias",
+                        title: "Referencias y recursos",
+                        component: <ContentUnit1.References_U1 />,
+                        subtopics: []
                     }
                 ]
             },
@@ -928,6 +936,109 @@ export const courseData = {
                                 component: <ContentUnit4.Content_4_3_7 />
                             }
                         ]
+                    },
+                    {
+                        id: "4.4",
+                        slug: "4-4-referencias",
+                        title: "Referencias",
+                        component: <ContentUnit4.References_U4 />,
+                        subtopics: []
+                    }
+                ]
+            },
+            {
+                id: 5,
+                slug: "unidad-5",
+                title: "Unidad V",
+                subtitle: "Entornos virtuales y despliegue de aplicaciones",
+                banner: "/banners/unit5.jpg",
+                subtext: "Creación de entornos virtuales, contenedores de aplicación y plataformas como servicio para el despliegue de aplicaciones.",
+                objective: "Implementa entornos virtuales y contenedores para el desarrollo, despliegue y operación de aplicaciones.",
+                content: [
+                    {
+                        id: "5.1",
+                        slug: "5-1-entornos-virtuales",
+                        title: "5.1. Entornos virtuales",
+                        component: <ContentUnit5.Content_5_1 />,
+                        subtopics: [
+                            {
+                                id: "5.1.1",
+                                slug: "5-1-1-entornos-virtuales-para-desarrollo-de-aplicaciones",
+                                title: "5.1.1. Entornos virtuales para desarrollo de aplicaciones",
+                                component: <ContentUnit5.Content_5_1_1 />
+                            },
+                            {
+                                id: "5.1.2",
+                                slug: "5-1-2-creacion-y-edicion-de-entornos-virtuales",
+                                title: "5.1.2. Creación y edición de entornos virtuales",
+                                component: <ContentUnit5.Content_5_1_2 />
+                            },
+                            {
+                                id: "5.1.3",
+                                slug: "5-1-3-gestion-e-instalacion-de-herramientas-en-entornos-virtuales",
+                                title: "5.1.3. Gestión e instalación de herramientas en entornos virtuales",
+                                component: <ContentUnit5.Content_5_1_3 />
+                            }
+                        ]
+                    },
+                    {
+                        id: "5.2",
+                        slug: "5-2-contenedores-virtuales-de-aplicacion",
+                        title: "5.2. Contenedores virtuales de aplicación",
+                        component: <ContentUnit5.Content_5_2 />,
+                        subtopics: [
+                            {
+                                id: "5.2.1",
+                                slug: "5-2-1-caracteristicas-de-los-contenedores-virtuales-de-aplicacion",
+                                title: "5.2.1. Características de los contenedores virtuales de aplicación",
+                                component: <ContentUnit5.Content_5_2_1 />
+                            },
+                            {
+                                id: "5.2.2",
+                                slug: "5-2-2-repositorios-de-aplicacion-en-la-nube",
+                                title: "5.2.2. Repositorios de aplicación en la Nube",
+                                component: <ContentUnit5.Content_5_2_2 />
+                            },
+                            {
+                                id: "5.2.3",
+                                slug: "5-2-3-gestion-de-contenedores-de-aplicacion",
+                                title: "5.2.3. Gestión de contenedores de aplicación",
+                                component: <ContentUnit5.Content_5_2_3 />
+                            }
+                        ]
+                    },
+                    {
+                        id: "5.3",
+                        slug: "5-3-la-plataforma-como-servicio",
+                        title: "5.3. La plataforma como servicio (Platform as a Service: PaaS)",
+                        component: <ContentUnit5.Content_5_3 />,
+                        subtopics: [
+                            {
+                                id: "5.3.1",
+                                slug: "5-3-1-desarrollo-de-servicios-y-api",
+                                title: "5.3.1. Desarrollo de servicios y API",
+                                component: <ContentUnit5.Content_5_3_1 />
+                            },
+                            {
+                                id: "5.3.2",
+                                slug: "5-3-2-microservicios",
+                                title: "5.3.2. Microservicios",
+                                component: <ContentUnit5.Content_5_3_2 />
+                            },
+                            {
+                                id: "5.3.3",
+                                slug: "5-3-3-sistemas-de-comunicaciones-entre-microservicios",
+                                title: "5.3.3. Sistemas de comunicaciones entre microservicios",
+                                component: <ContentUnit5.Content_5_3_3 />
+                            }
+                        ]
+                    },
+                    {
+                        id: "5.4",
+                        slug: "5-3-referencias",
+                        title: "Referencias y recursos",
+                        component: <ContentUnit5.References_U5 />,
+                        subtopics: []
                     }
                 ]
             }

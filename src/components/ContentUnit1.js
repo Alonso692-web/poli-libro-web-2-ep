@@ -1625,6 +1625,143 @@ export const Content_1_6_6 = () => (
     </div>
 );
 
+export const References_U1 = () => (
+    <div>
+        <ul className="space-y-2 mt-6">
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Bass, L., Clements, P., & Kazman, R. (2012). <em>Software architecture in practice</em> (3rd ed.). Addison-Wesley Professional.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Martin, R. C. (2017). <a
+                    href="https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Clean architecture: A craftsman&apos;s guide to software structure and design
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Evans, E. (2004). <em>Domain-driven design: Tackling complexity in the heart of software</em>. Addison-Wesley.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Richards, M. (2015). <a
+                    href="https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Software architecture patterns
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Newman, S. (2015). <a
+                    href="https://www.oreilly.com/library/view/building-microservices/9781491950340/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Building microservices: Designing fine-grained systems
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Beck, K. (2002). <em>Test-driven development: By example</em>. Addison-Wesley.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Cockburn, A. (2005). <a
+                    href="https://alistair.cockburn.us/hexagonal-architecture/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Hexagonal architecture
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Fowler, M. (2003). <em>Patterns of enterprise application architecture</em>. Addison-Wesley.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Richardson, C. (2018). <a
+                    href="https://microservices.io/book"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Microservice patterns: With examples in Java
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Krug, S. (2014). <em>Don&apos;t make me think: A common sense approach to web usability</em> (3rd ed.). New Riders.</span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Kruchten, P. (1995). <a
+                    href="https://doi.org/10.1109/52.469759"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    The 4+1 view model of architecture
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Turnbull, J. (2014). <a
+                    href="https://dockerbook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    The Docker Book: Containerization is the new virtualization
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Red Hat. (s.f.). <a
+                    href="https://www.redhat.com/en/topics/containers/containers-vs-vms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Containers vs Virtual Machines (VMs)
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>Microsoft. (s.f.). <a
+                    href="https://learn.microsoft.com/en-us/azure/architecture/microservices/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    Microservices architecture
+                </a></span>
+            </li>
+            <li className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span>The Twelve-Factor App. (s.f.). <a
+                    href="https://12factor.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                    12 factor methodology
+                </a></span>
+            </li>
+        </ul>
+    </div>
+);
+
 // Exportar todos los componentes
 const ContentUnit1Components = {
     Content_1_1,
@@ -1650,7 +1787,8 @@ const ContentUnit1Components = {
     Content_1_6_3,
     Content_1_6_4,
     Content_1_6_5,
-    Content_1_6_6
+    Content_1_6_6,
+    References_U1
 };
 
 export default ContentUnit1Components;
