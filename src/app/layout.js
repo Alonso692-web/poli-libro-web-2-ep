@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <Header />
           <main className="flex-grow">
             {children}
+            <Analytics />
           </main>
           <Footer />
         </div>
