@@ -1,40 +1,32 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-
-let hasIncremented = false;
+import axios from 'axios';
 
 const Sidebar = () => {
     const [visits, setVisits] = useState(0);
 
     useEffect(() => {
-        if (!hasIncremented) {
-
-            let currentCount = localStorage.getItem('polilibroVisitCounter');
-
-            if (currentCount === null) {
-                currentCount = 0;
-            } else {
-                currentCount = parseInt(currentCount, 10);
+        const incrementVisit = async () => {
+            try {
+                await axios.post('/api/visitCounter');
+            } catch (error) {
+                console.error("Error incrementing visit: ", error);
             }
+        };
 
-            // Incrementar y guardar en localStorage
-            const newCount = currentCount + 1;
-            localStorage.setItem('polilibroVisitCounter', newCount.toString());
+        const getVisitCount = async () => {
+            try {
+                const response = await axios.get('/api/visitCounter');
+                setVisits(response.data.count);
+            } catch (error) {
+                console.error("Error fetching visit count: ", error);
+            }
+        };
 
-            // Actualizar el estado con el nuevo valor
-            setVisits(newCount);
-
-            // Marcar que ya se ha incrementado en esta sesión
-            hasIncremented = true;
-        } else {
-            // Si ya se ha incrementado, leer el valor actual y actualizar el estado
-            const currentCount = localStorage.getItem('polilibroVisitCounter');
-            const count = currentCount ? parseInt(currentCount, 10) : 0;
-            setVisits(count);
-        }
+        incrementVisit();
+        getVisitCount();
     }, []);
-
 
     const formattedVisits = String(visits).padStart(6, '0').split('');
 
