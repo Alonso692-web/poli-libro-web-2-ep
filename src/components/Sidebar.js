@@ -10,7 +10,7 @@ const Sidebar = () => {
     useEffect(() => {
         if (!hasIncremented) {
 
-            let currentCount = localStorage.getItem('polilibroVisitCounter');
+            let currentCount = localStorage.getItem('polilibroVisitCounterTemp');
 
             if (currentCount === null) {
                 currentCount = 0;
@@ -20,7 +20,7 @@ const Sidebar = () => {
 
             // Incrementar y guardar en localStorage
             const newCount = currentCount + 1;
-            localStorage.setItem('polilibroVisitCounter', newCount.toString());
+            localStorage.setItem('polilibroVisitCounterTemp', newCount.toString());
 
             // Actualizar el estado con el nuevo valor
             setVisits(newCount);
@@ -29,7 +29,7 @@ const Sidebar = () => {
             hasIncremented = true;
         } else {
             // Si ya se ha incrementado, leer el valor actual y actualizar el estado
-            const currentCount = localStorage.getItem('polilibroVisitCounter');
+            const currentCount = localStorage.getItem('polilibroVisitCounterTemp');
             const count = currentCount ? parseInt(currentCount, 10) : 0;
             setVisits(count);
         }
