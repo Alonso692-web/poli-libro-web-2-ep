@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Polilibro: Web Client and Backend Development Frameworks
 
-## Getting Started
+![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-First, run the development server:
+Este proyecto es un recurso didáctico digital ("Polilibro") desarrollado para la unidad de aprendizaje **Web Client and Backend Development Frameworks** de la **UPIIZ - IPN** (Instituto Politécnico Nacional).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+La plataforma sirve como guía interactiva para estudiantes, cubriendo desde arquitecturas web y servicios REST hasta el desarrollo frontend moderno y despliegue en la nube.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 **Demo en vivo:** [https://polilibro-web-2.vercel.app/](https://polilibro-web-2.vercel.app/)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📖 Contenido del Curso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El material está organizado en 5 unidades temáticas principales:
 
-## Learn More
+1.  **Unidad I:** Arquitecturas de desarrollo web (Monolítica, N-capas, Microservicios, etc.).
+2.  **Unidad II:** Desarrollo de APIs y servicios web (REST, SOAP, JSON, XML).
+3.  **Unidad III:** Desarrollo del lado del servidor (ORM, JPA, Endpoints, Swagger).
+4.  **Unidad IV:** Desarrollo del lado del cliente (UI Components, Consumo de APIs, Seguridad).
+5.  **Unidad V:** Entornos virtuales y despliegue (Docker, PaaS, Microservicios).
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Stack Tecnológico
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto está construido utilizando tecnologías web modernas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*   **Framework Principal:** [Next.js](https://nextjs.org/) (App Router).
+*   **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/) (Configuración inline en CSS).
+*   **Base de Datos (Contador):** [Upstash Redis](https://upstash.com/) (Para el contador de visitas).
+*   **Analíticas:** Vercel Analytics.
+*   **Lenguaje:** JavaScript (ES6+).
+*   **Iconos:** React Icons.
 
-## Deploy on Vercel
+## 🚀 Instalación y Configuración Local
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/polilibro-web-2.git
+    cd polilibro-web-2
+    ```
+
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configurar Variables de Entorno:**
+    Crea un archivo `.env.local` en la raíz del proyecto para configurar la conexión a Redis (necesario para el contador de visitas).
+
+    ```env
+    UPSTASH_REDIS_REST_URL="tu_url_de_upstash"
+    UPSTASH_REDIS_REST_TOKEN="tu_token_de_upstash"
+    ```
+
+4.  **Ejecutar el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+
+5.  **Abrir en el navegador:**
+    Visita [http://localhost:3000](http://localhost:3000).
+
+## 📂 Estructura del Proyecto
+
+```text
+├── src/
+│   ├── app/                # Rutas y páginas (App Router)
+│   │   ├── api/            # API Routes (contador de visitas)
+│   │   ├── unidad-X/       # Páginas dinámicas por unidad
+│   │   └── page.js         # Página de inicio
+│   ├── components/         # Componentes reutilizables (Header, Sidebar, etc.)
+│   └── courseData.js       # Fuente de verdad: Contenido, temas y estructura del curso
+├── public/                 # Imágenes, banners y documentos PDF
+└── ...config files
